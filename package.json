@@ -20,7 +20,8 @@
 		"storybook": "start-storybook -p 6006",
 		"clean": "lerna clean --yes && rimraf node_modules",
 		"bootstrap": "lerna bootstrap --use-workspaces",
-		"commit": "git-cz"
+		"commit": "git-cz",
+		"create-pkg": "node scripts/create-package.js"
 	},
 	"czConfig": {
 		"path": "node_modules/cz-conventional-changelog"
@@ -42,6 +43,7 @@
 	"devDependencies": {
 		"@commitlint/cli": "^11.0.0",
 		"@commitlint/config-conventional": "^11.0.0",
+		"@storybook/react": "^6.0.28",
 		"@typescript-eslint/eslint-plugin": "^4.6.0",
 		"@typescript-eslint/parser": "^4.6.0",
 		"babel-eslint": "^10.1.0",
