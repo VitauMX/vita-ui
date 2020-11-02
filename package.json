@@ -1,0 +1,16 @@
+{
+	"name": "vita-ui",
+	"version": "0.1.0",
+	"description": "Vitau UI Library",
+	"author": "Daniel Sepulveda",
+	"license": "MIT",
+	"private": false,
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		]
+	},
+	"devDependencies": {
+		"lerna": "^3.22.1"
+	}
+}
