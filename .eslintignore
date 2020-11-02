@@ -1,0 +1,6 @@
+dist
+lib
+*.d.ts
+node_modules
+coverage
+build

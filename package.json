@@ -4,13 +4,60 @@
 	"description": "Vitau UI Library",
 	"author": "Daniel Sepulveda",
 	"license": "MIT",
-	"private": false,
+	"private": true,
 	"workspaces": {
 		"packages": [
 			"packages/*"
 		]
 	},
+	"scripts": {
+		"prestart": "yarn && yarn bootstrap",
+		"boot": "yarn prestart && yarn build",
+		"start": "yarn build && yarn storybook",
+		"build": "lerna run build --stream",
+		"test": "lerna run test --stream",
+		"lint": "lerna run lint --stream",
+		"storybook": "start-storybook -p 6006",
+		"clean": "lerna clean --yes && rimraf node_modules",
+		"bootstrap": "lerna bootstrap --use-workspaces",
+		"commit": "git-cz"
+	},
+	"czConfig": {
+		"path": "node_modules/cz-conventional-changelog"
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"changelog": {
+		"repo": "vitau/vita-ui",
+		"labels": {
+			"🔨 Breaking Change": "🔨 Breaking Changes",
+			"🚀 Type: Feature": "🚀 Features",
+			"🐛 Type: Bug": "🐛 Bugfixes"
+		},
+		"cacheDir": ".changelog"
+	},
 	"devDependencies": {
-		"lerna": "^3.22.1"
+		"@commitlint/cli": "^11.0.0",
+		"@commitlint/config-conventional": "^11.0.0",
+		"@typescript-eslint/eslint-plugin": "^4.6.0",
+		"@typescript-eslint/parser": "^4.6.0",
+		"babel-eslint": "^10.1.0",
+		"commitizen": "^4.2.2",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^7.12.1",
+		"eslint-config-prettier": "^6.15.0",
+		"eslint-plugin-prettier": "^3.1.4",
+		"eslint-plugin-react": "^7.21.5",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"husky": "^4.3.0",
+		"lerna": "^3.22.1",
+		"lerna-changelog": "^1.0.1",
+		"lint-staged": "^10.5.1",
+		"prettier": "^2.1.2",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.0.5"
 	}
 }
