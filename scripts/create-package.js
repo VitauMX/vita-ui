@@ -7,6 +7,10 @@ const ncp = require('ncp');
 const { promisify } = require('util');
 const execa = require('execa');
 
+const componentContent = require('./files/component');
+const storiesContent = require('./files/story');
+const testContent = require('./files/test');
+
 const access = promisify(fs.access);
 const copy = promisify(ncp);
 
@@ -36,50 +40,6 @@ function createFile(filePath, fileContent = '') {
   });
 }
 
-const componentContent = (component) =>
-  `import React from "react"
-
-type Props = {}
-
-const ${component} = (props: Props) => {
-  return <div>This is a ${component} component</div>
-}
-
-export default ${component}
-`;
-
-const storiesContent = (component) => `
-import React from "react"
-
-export default {
-  title: "${component}"
-}
-
-export const BasicExample = () => <div>Component goes here</div>
-`;
-
-function createFiles(options) {
-  const { component } = options;
-
-  const files = [
-    [`${component}.tsx`, componentContent],
-    [`${component}.stories.tsx`, storiesContent],
-    [`index.ts`],
-  ];
-
-  const srcDirectory = `packages/${component}/src/`;
-
-  createDirectory(srcDirectory);
-
-  files.forEach(([file, fileContent]) => {
-    const filePath = srcDirectory + file;
-    createFile(
-      filePath,
-      typeof fileContent === 'function' ? fileContent(component) : fileContent
-    );
-  });
-}
-
 // Create a new folder at the specified path
 function createDirectory(path) {
   try {
@@ -89,6 +49,44 @@ function createDirectory(path) {
   } catch (err) {
     console.error(`[createDirectory]: Failed to create director at ${path}`);
   }
+}
+
+function createFiles(options) {
+  const { component } = options;
+
+  const srcFiles = [[`${component}.tsx`, componentContent], [`index.ts`]];
+  const storiesFiles = [[`${component}.stories.tsx`, storiesContent]];
+  const testFiles = [[`${component}.test.tsx`, testContent]];
+
+  const srcDirectory = `packages/${component}/src/`;
+  const storiesDirectory = `packages/${component}/stories/`;
+  const testsDirectory = `packages/${component}/tests/`;
+
+  createDirectory(srcDirectory);
+  createDirectory(storiesDirectory);
+  createDirectory(testsDirectory);
+
+  srcFiles.forEach(([file, fileContent]) => {
+    const filePath = srcDirectory + file;
+    createFile(
+      filePath,
+      typeof fileContent === 'function' ? fileContent(component) : fileContent
+    );
+  });
+  storiesFiles.forEach(([file, fileContent]) => {
+    const filePath = storiesDirectory + file;
+    createFile(
+      filePath,
+      typeof fileContent === 'function' ? fileContent(component) : fileContent
+    );
+  });
+  testFiles.forEach(([file, fileContent]) => {
+    const filePath = testsDirectory + file;
+    createFile(
+      filePath,
+      typeof fileContent === 'function' ? fileContent(component) : fileContent
+    );
+  });
 }
 
 // Add index.ts file to the src/ folder
