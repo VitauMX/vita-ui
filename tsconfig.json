@@ -1,23 +1,23 @@
 {
-	"compilerOptions": {
-		"target": "es5",
-		"module": "esnext",
-		"lib": ["dom", "esnext"],
-		"declaration": true,
-		"sourceMap": true,
-		"skipLibCheck": true,
-		"moduleResolution": "node",
-		"strict": true,
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
-		"forceConsistentCasingInFileNames": true,
-		"resolveJsonModule": true,
-		"noEmit": true,
-		"jsx": "react",
-		"strictNullChecks": true,
-		"strictFunctionTypes": true,
-		"noFallthroughCasesInSwitch": true
-	},
-	"include": ["packages"],
-	"exclude": ["node_modules"]
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "jsx": "react",
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "build"]
 }
