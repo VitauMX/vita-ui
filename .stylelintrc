@@ -6,5 +6,9 @@
     "stylelint-config-recommended",
     "stylelint-config-styled-components"
   ],
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "font-family-no-duplicate-names": null
+  },
   ignoreFiles: ["packages/*/tests/*.test.{js,ts,tsx}"]
 }
