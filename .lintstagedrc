@@ -1,6 +1,11 @@
 {
-  "packages/**/*.{ts,tsx,js,jsx}": [
+  "**/*.{ts,tsx,js,jsx}": [
+    "stylelint",
     "eslint",
+    "jest --findRelatedTests",
     "prettier --write"
   ],
+  "**/package.json": [
+    "prettier-package-json --write"
+  ]
 }

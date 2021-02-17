@@ -1,23 +1,37 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
+    // ECMAScript target version. "ESNext" targets latest supported features.
+    "target": "ESNext",
+    "module": "ESNext",
+    // List of library files to be included in the compilation.
     "lib": ["dom", "esnext"],
+    // Ensure that .d.ts files are created by tsc, but not .js files
     "declaration": true,
+    "emitDeclarationOnly": true,
+    // Generates corresponding .map file.
     "sourceMap": true,
-    "skipLibCheck": true,
+    // Search under node_modules for non-relative imports.
     "moduleResolution": "node",
+    // Enable all strict type checking options.
     "strict": true,
+    // Import non-ES modules as default imports.
     "esModuleInterop": true,
+    // Allow default imports from modules with no default export.
     "allowSyntheticDefaultImports": true,
+    // Disallow inconsistently-cased references to the same file.
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "noEmit": true,
+    // allows react jsx in tsx files
     "jsx": "react",
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
-    "noFallthroughCasesInSwitch": true
+    // Can't assign null/undefined to types that do not handle them
+    "strictNullChecks": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "build"]
+  "include": ["packages", "scripts"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS",
+      "resolveJsonModule": true,
+      "noImplicitAny": false
+    }
+  }
 }
