@@ -1,7 +1,5 @@
 module.exports = {
   preset: 'ts-jest',
-  cacheDirectory: '.jest-cache',
-  coverageDirectory: '.jest-coverage',
   collectCoverageFrom: [
     '/packages/*/tests/*.{js,jsx,ts,tsx}',
     '!/packages/*/src/index.{js,jsx,ts,tsx}',
