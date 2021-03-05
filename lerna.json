@@ -2,5 +2,30 @@
   "packages": ["packages/*"],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "independent",
+  "ignoreChanges": ["**/stories/**", "**/tests/**"],
+  "command": {
+    "publish": {
+      "registry": "https://registry.npmjs.org/"
+    },
+    "version": {
+      "conventionalCommits": true,
+      "allowBranch": "release/*",
+      "message": "chore(release): publish",
+      "noChangelog": true,
+      "noPush": true
+    }
+  },
+  "changelog": {
+    "repo": "VitauMX/vita-ui",
+    "cacheDir": ".changelog",
+    "nextVersion": "Release",
+    "labels": {
+      "PR: Breaking Change :boom:": ":boom: Breaking Change",
+      "PR: New Feature :rocket:": ":rocket: New Feature",
+      "PR: Bug Fix :bug:": ":bug: Bug Fix",
+      "PR: Internal :house:": ":house: Internal",
+      "PR: Refactor :recycle:": ":recycle: Refactor"
+    }
+  }
 }
