@@ -46,3 +46,35 @@ export const VariableColumns = () => (
     </GridItem>
   </Grid>
 );
+
+export const ResponsiveGrid = () => (
+  <Grid
+    gridTemplateColumns={[
+      'repeat(1, auto)',
+      'repeat(2, auto)',
+      'repeat(4, auto)',
+    ]}
+    gridGap={3}
+  >
+    <GridItem>
+      <Box p={3} backgroundColor="tomato">
+        1
+      </Box>
+    </GridItem>
+    <GridItem>
+      <Box p={3} backgroundColor="papayawhip">
+        2
+      </Box>
+    </GridItem>
+    <GridItem>
+      <Box p={3} backgroundColor="plum">
+        3
+      </Box>
+    </GridItem>
+    <GridItem>
+      <Box p={3} backgroundColor="plum">
+        4
+      </Box>
+    </GridItem>
+  </Grid>
+);
