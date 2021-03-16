@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import { Layout } from '../src';
+import { Grid } from '../src';
 
-describe('Layout', () => {
-  test('renders correctly', () => {
-    render(<Layout />);
+describe('Grid', () => {
+  it('renders consistently', () => {
+    const { container } = render(<Grid />);
+    expect(container.firstChild).toMatchSnapshot();
   });
 });
