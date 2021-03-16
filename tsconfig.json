@@ -27,6 +27,7 @@
   },
   "include": ["packages", "scripts"],
   "exclude": ["node_modules"],
+  "files": ["utils/test/jest.d.ts"],
   "ts-node": {
     "compilerOptions": {
       "module": "CommonJS",
