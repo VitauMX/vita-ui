@@ -1,3 +1,27 @@
 {
-  "extends": ["config:base"]
+  "extends": ["config:base"],
+  "schedule": ["on Monday every 2 months"],
+  "labels": ["PR: Internal :house:"],
+  "ignorePaths": ["**/node_modules/**"],
+  "postUpgradeTasks": {
+    "commands": ["yarn prestart"],
+    "fileFilters": ["yarn.lock"]
+  },
+  "packageRules": [
+    {
+      "paths": ["package.json"],
+      "rangeStrategy": "replace",
+      "minor": {
+        "groupName": "non-major shared dependencies",
+        "groupSlug": "shared-minor-patch"
+      }
+    },
+    {
+      "paths": ["packages/**"],
+      "minor": {
+        "groupName": "non-major package dependencies",
+        "groupSlug": "packages-minor-patch"
+      }
+    }
+  ]
 }
