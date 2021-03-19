@@ -24,7 +24,8 @@
     "prestart": "yarn && yarn bootstrap",
     "start": "yarn build && yarn storybook",
     "storybook": "start-storybook -p 6006",
-    "test": "jest --passWithNoTests --watch"
+    "test": "jest --passWithNoTests --watch",
+    "test:ci": "jest --passWithNoTests"
   },
   "config": {
     "commitizen": {
