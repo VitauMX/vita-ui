@@ -9,6 +9,34 @@
   "imageSize": 64,
   "commit": true,
   "commitConvention": "angular",
-  "contributors": [],
+  "contributors": [
+    {
+      "login": "DanielSepulveda",
+      "name": "Daniel Sepulveda",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25437031?v=4",
+      "profile": "https://github.com/DanielSepulveda",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "infra",
+        "review",
+        "test"
+      ]
+    },
+    {
+      "login": "martinrrm",
+      "name": "Martin Ruiz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43253759?v=4",
+      "profile": "https://github.com/martinrrm",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "review",
+        "test"
+      ]
+    }
+  ],
   "contributorsPerLine": 7
 }
