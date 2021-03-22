@@ -84,6 +84,15 @@ const generateContributors = async () => {
   spinner.start('Generating contributors');
 
   await execa('yarn', ['contributors:generate']);
+  await execa('git', ['add', '.']);
+  await execa('git', [
+    'commit',
+    '-m',
+    `chore(contributors): generate contributors`,
+    '--no-verify',
+    '--quiet',
+    changelogPath,
+  ]);
 
   spinner.succeed();
 };
