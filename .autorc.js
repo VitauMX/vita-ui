@@ -4,7 +4,7 @@ module.exports = {
     [
       'all-contributors',
       {
-        exclude: ['renovate-bot'],
+        exclude: ['renovate'],
       },
     ],
   ],
