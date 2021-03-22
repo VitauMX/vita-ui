@@ -23,6 +23,19 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "martinrrm",
+      "name": "Martin Ruiz",
+      "avatar_url": "https://avatars.githubusercontent.com/u/43253759?v=4",
+      "profile": "https://github.com/martinrrm",
+      "contributions": [
+        "code",
+        "doc",
+        "example",
+        "review",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7
