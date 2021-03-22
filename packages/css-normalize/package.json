@@ -1,5 +1,5 @@
 {
-  "name": "@vita-ui/css-normalize",
+  "name": "@vitau/css-normalize",
   "description": "Normalize CSS react component for Vita UI",
   "license": "MIT",
   "homepage": "https://github.com/VitauMX/vita-ui#readme",
@@ -41,5 +41,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "gitHead": "3dd804a626d6138db8dd1aff9750697801371490"
 }
