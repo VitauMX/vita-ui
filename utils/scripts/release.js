@@ -80,6 +80,14 @@ const generateChangelog = async () => {
   }
 };
 
+const generateContributors = async () => {
+  spinner.start('Generating contributors');
+
+  await execa('yarn', ['contributors:generate']);
+
+  spinner.succeed();
+};
+
 const run = async () => {
   clear();
   // Display intro message banner
@@ -88,6 +96,7 @@ const run = async () => {
     await assertGitBranch(ALLOWED_RELEASE_BRANCHES, spinner);
     await printCommits();
     await generateChangelog();
+    await generateContributors();
     spinner.succeed(
       'Success\n✨ Push this branch and create a new pull request.'
     );
