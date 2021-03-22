@@ -20,7 +20,8 @@
     "postinstall": "yarn bootstrap && yarn check:pkgs",
     "lint": "lerna run lint --stream",
     "publish:pkgs": "node utils/scripts/publish.js",
-    "release": "node utils/scripts/release.js",
+    "release": "auto shipit",
+    "release:old": "node utils/scripts/release.js",
     "prestart": "yarn && yarn bootstrap",
     "start": "yarn build && yarn storybook",
     "storybook": "start-storybook -p 6006",
@@ -32,6 +33,7 @@
     }
   },
   "dependencies": {
+    "@auto-it/all-contributors": "^10.21.0",
     "@babel/cli": "^7.12.16",
     "@babel/core": "^7.12.16",
     "@babel/preset-env": "^7.12.16",
@@ -56,6 +58,7 @@
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^4.6.0",
     "@typescript-eslint/parser": "^4.6.0",
+    "auto": "^10.21.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.3",
