@@ -25,6 +25,7 @@
     "prestart": "yarn && yarn bootstrap",
     "start": "yarn build && yarn storybook",
     "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
     "test": "jest --passWithNoTests --watch"
   },
   "config": {
