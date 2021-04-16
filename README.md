@@ -16,6 +16,54 @@
 </p>
 <br />
 
+
+## Documentation
+
+You can find the Vitau-ui documentation [on Notion]().
+
+The documentation is divided into several sections:
+
+* [User Manuals]()
+* [Design System](https://www.sketch.com/team/4gvd/p/9PeY0)
+
+* [Storybook](https://ui.vitau.mx/?path=/story/components-layout-flex--simple-flex)
+
+
+## Installation
+### Prerequisites
+
+
+```
+yarn -v    //  >= 1.2x //
+```
+## Getting Started
+
+Installing dependencies
+```
+yarn prestart
+```
+Executing to develop
+```
+yarn start
+```
+Executing to build
+```
+yarn build
+```
+Executing to test
+```
+yarn test
+```
+
+## Contributing
+
+Thank you for being here, we're really happy you decided to contribute to the project.
+
+Before you contribute to the project please make sure to read all items below.
+
+* [Contributing Guide](/CONTRIBUTING.md)
+
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
