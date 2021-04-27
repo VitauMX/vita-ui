@@ -5,6 +5,7 @@ export default css`
   box-sizing: border-box;
   font-size: 1rem;
   border-radius: 4px;
+  white-space: nowrap;
   height: 44px;
   user-select: none;
   appearance: none;
