@@ -1,14 +1,14 @@
 import { Meta } from '@storybook/react';
 import * as React from 'react';
-import { Button } from '../src';
+import { ButtonPrimary } from '../src';
 import { Box, Grid, GridItem } from '../../layout/src/index';
 
 export default {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/Button/Primary',
+  component: ButtonPrimary,
 } as Meta;
 
-export const PrimaryButton = () => {
+export const Variants = () => {
   return (
     <Grid gridTemplateRows="repeat(5, 1fr)" gridRowGap="2rem">
       <Grid gridTemplateColumns="repeat(5, 1fr)">
@@ -21,13 +21,11 @@ export const PrimaryButton = () => {
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
-            <Button variant="primary">Text</Button>
+            <ButtonPrimary>Text</ButtonPrimary>
           </Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
-          <Button variant="primary" disabled>
-            Text
-          </Button>
+          <ButtonPrimary disabled>Text</ButtonPrimary>
         </GridItem>
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
@@ -36,15 +34,13 @@ export const PrimaryButton = () => {
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
-            <Button variant="primary" destructive>
-              Text
-            </Button>
+            <ButtonPrimary isDestructive>Text</ButtonPrimary>
           </Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
-          <Button variant="primary" disabled destructive>
+          <ButtonPrimary disabled isDestructive>
             Text
-          </Button>
+          </ButtonPrimary>
         </GridItem>
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
@@ -53,15 +49,13 @@ export const PrimaryButton = () => {
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
-            <Button variant="primary" size="large">
-              Text
-            </Button>
+            <ButtonPrimary size="large">Text</ButtonPrimary>
           </Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
-          <Button variant="primary" disabled size="large">
+          <ButtonPrimary disabled size="large">
             Text
-          </Button>
+          </ButtonPrimary>
         </GridItem>
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
@@ -70,15 +64,13 @@ export const PrimaryButton = () => {
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
-            <Button variant="primary" size="small">
-              Text
-            </Button>
+            <ButtonPrimary size="small">Text</ButtonPrimary>
           </Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
-          <Button variant="primary" disabled size="small">
+          <ButtonPrimary disabled size="small">
             Text
-          </Button>
+          </ButtonPrimary>
         </GridItem>
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
@@ -87,15 +79,15 @@ export const PrimaryButton = () => {
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
-            <Button variant="primary" destructive size="small">
+            <ButtonPrimary isDestructive size="small">
               Text
-            </Button>
+            </ButtonPrimary>
           </Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
-          <Button variant="primary" disabled destructive size="small">
+          <ButtonPrimary disabled isDestructive size="small">
             Text
-          </Button>
+          </ButtonPrimary>
         </GridItem>
       </Grid>
     </Grid>

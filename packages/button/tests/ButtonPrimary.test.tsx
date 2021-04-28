@@ -1,27 +1,25 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import { Button } from '../src';
+import { ButtonPrimary } from '../src';
 import { axe } from 'jest-axe';
 
 global.alert = jest.fn();
 
 describe('Button', () => {
   it('renders correctly', () => {
-    render(<Button variant="primary" />);
+    render(<ButtonPrimary />);
   });
 
   it('can use onClick', () => {
     const { getByText } = render(
-      <Button variant="primary" onClick={() => alert('click')}>
-        Test
-      </Button>
+      <ButtonPrimary onClick={() => alert('click')}>Test</ButtonPrimary>
     );
     fireEvent.click(getByText('Test'));
     expect(global.alert).toHaveBeenCalledTimes(1);
   });
 
   it('should have no axe violations', async () => {
-    const { container } = render(<Button variant="primary">Test</Button>);
+    const { container } = render(<ButtonPrimary>Test</ButtonPrimary>);
     const results = await axe(container);
     expect(results).toHaveNoViolations();
   });
