@@ -60,7 +60,7 @@ export const Variants = () => {
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
         <GridItem gridColumn="span 1/span 1">
-          <Box>Primary Large</Box>
+          <Box>Primary Small</Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
@@ -75,7 +75,7 @@ export const Variants = () => {
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
         <GridItem gridColumn="span 1/span 1">
-          <Box>Primary Large</Box>
+          <Box>Primary Small Destructive</Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
