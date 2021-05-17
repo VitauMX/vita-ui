@@ -29,13 +29,13 @@ const size = variant({
   },
 });
 
-export interface IPrimaryButtonProps
+export interface IButtonPrimaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isDestructive?: boolean;
   size?: typeof sizes[number];
 }
 
-const colorStyles = (props: IPrimaryButtonProps) => {
+const colorStyles = (props: IButtonPrimaryProps) => {
   if (props.isDestructive) {
     return css`
       background-color: #ff2d1a;
@@ -78,7 +78,7 @@ const colorStyles = (props: IPrimaryButtonProps) => {
   `;
 };
 
-export const ButtonPrimary = styled.button<IPrimaryButtonProps>`
+export const ButtonPrimary = styled.button<IButtonPrimaryProps>`
   color: #ffffff;
   font-weight: 600;
 

@@ -24,7 +24,7 @@ const size = variant({
   },
 });
 
-export interface ISecondaryButtonProps
+export interface IButtonSecondaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: typeof sizes[number];
 }
@@ -54,7 +54,7 @@ const colorStyles = () => {
   `;
 };
 
-export const ButtonSecondary = styled.button<ISecondaryButtonProps>`
+export const ButtonSecondary = styled.button<IButtonSecondaryProps>`
   color: #0077b3;
   font-weight: 600;
 
