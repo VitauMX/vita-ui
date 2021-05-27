@@ -2,7 +2,7 @@ import { Meta } from '@storybook/react';
 import * as React from 'react';
 import { Icon, CommentsIcon } from '../src';
 import * as Icons from '../src/icons';
-import { Box, Flex, Grid, GridItem } from '../../layout';
+import { Box, Flex, Grid, GridItem } from '../../layout/src/index';
 
 const sampleRows = 6;
 const sizeOfSample = 6 * sampleRows;
