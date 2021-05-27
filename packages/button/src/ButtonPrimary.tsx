@@ -29,10 +29,36 @@ const size = variant({
   },
 });
 
+const icon = variant({
+  prop: 'iconPosition',
+  variants: {
+    left: {
+      paddingLeft: '24px',
+    },
+    right: {
+      paddingRight: '24px',
+    },
+  },
+});
+
+const smallBtnIcon = variant({
+  prop: 'iconPosition',
+  variants: {
+    left: {
+      paddingLeft: '12px',
+    },
+    right: {
+      paddingRight: '12px',
+    },
+  },
+});
+
 export interface IButtonPrimaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isDestructive?: boolean;
   size?: typeof sizes[number];
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
 }
 
 const colorStyles = (props: IButtonPrimaryProps) => {
@@ -78,16 +104,60 @@ const colorStyles = (props: IButtonPrimaryProps) => {
   `;
 };
 
-export const ButtonPrimary = styled.button<IButtonPrimaryProps>`
+const iconStyles = (props: IButtonPrimaryProps) => {
+  if (props.icon && props.iconPosition === 'left') {
+    return css`
+      svg {
+        width: 16px;
+        height: 16px;
+        padding-right: 8px;
+      }
+    `;
+  }
+  return css`
+    svg {
+      width: 16px;
+      height: 16px;
+      padding-left: 8px;
+    }
+  `;
+};
+
+const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
   color: #ffffff;
   font-weight: 600;
-
   ${(props) => colorStyles(props)}
+  ${(props) => (props.icon ? iconStyles(props) : null)}
 
   ${buttonBaseStyles}
   ${size}
+  ${(props) => (props.icon && !(props.size === 'small') ? icon : null)}
+  ${(props) => (props.icon && props.size === 'small' ? smallBtnIcon : null)}
 `;
+
+export const ButtonPrimary = React.forwardRef<
+  HTMLButtonElement,
+  IButtonPrimaryProps
+>((props, ref) => {
+  const { children, ...buttonProps } = props;
+
+  const leftIcon =
+    props.icon && props.iconPosition === 'left' ? props.icon : null;
+  const rightIcon =
+    props.icon && props.iconPosition == 'right' ? props.icon : null;
+
+  return (
+    <StyledButtonPrimary ref={ref} {...buttonProps}>
+      {leftIcon}
+      {children}
+      {rightIcon}
+    </StyledButtonPrimary>
+  );
+});
+
+ButtonPrimary.displayName = 'button';
 
 ButtonPrimary.defaultProps = {
   size: SIZE.MEDIUM,
+  iconPosition: 'left',
 };
