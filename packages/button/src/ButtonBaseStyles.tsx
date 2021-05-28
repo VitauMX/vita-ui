@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 export default css`
   border: none;
-  font-family: inherit;
+  font-family: 'Open Sans', sans-serif;
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
