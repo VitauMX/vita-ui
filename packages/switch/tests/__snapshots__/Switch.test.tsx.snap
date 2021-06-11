@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch renders correctly 1`] = `
+.c0 {
+  display: none;
+}
+
+.c0:checked + .c1 {
+  background: #1ab3ff;
+}
+
+.c0:checked + .c1::after {
+  left: 48.21%;
+  right: 5.36%;
+  top: 9.38%;
+  bottom: 9.38%;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.1);
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+<input
+  class="c0"
+  id="test"
+  role="switch"
+  type="checkbox"
+/>
+`;
