@@ -18,6 +18,7 @@ const spinner = ora();
 
 const ALLOWED_RELEASE_BRANCHES = ['release/*'];
 const INSERTION_SLUG = '<!-- insert-new-changelog-here -->';
+const changelogPath = resolve(__dirname, '..', '..', 'CHANGELOG.md');
 
 const printCommits = async () => {
   spinner.start('Commits since current version:');
@@ -52,7 +53,6 @@ const generateChangelog = async () => {
   await write(fd, markdown);
 
   const readFile = util.promisify(fs.readFile);
-  const changelogPath = resolve(__dirname, '..', '..', 'CHANGELOG.md');
   const data = await readFile(changelogPath, 'utf8');
 
   if (data.includes(INSERTION_SLUG)) {
