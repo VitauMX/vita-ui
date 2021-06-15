@@ -6,6 +6,8 @@ export interface IButtonTertiaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isDestructive?: boolean;
   plain?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
 }
 
 const colorStyles = (props: IButtonTertiaryProps) => {
@@ -75,11 +77,59 @@ const colorStyles = (props: IButtonTertiaryProps) => {
   `;
 };
 
-export const ButtonTertiary = styled.button<IButtonTertiaryProps>`
+const iconStyles = (props: IButtonTertiaryProps) => {
+  if (props.icon && props.iconPosition === 'left') {
+    return css`
+      padding-left: 24px;
+      svg {
+        width: 16px;
+        height: 16px;
+        padding-right: 8px;
+      }
+    `;
+  }
+  return css`
+    padding-right: 24px;
+    svg {
+      width: 16px;
+      height: 16px;
+      padding-left: 8px;
+    }
+  `;
+};
+
+const StyledButtonTertiary = styled.button<IButtonTertiaryProps>`
   font-weight: 600;
   padding: 14px 32px;
 
   ${(props) => colorStyles(props)}
+  ${(props) => (props.icon ? iconStyles(props) : null)}
 
   ${buttonBaseStyles}
 `;
+
+export const ButtonTertiary = React.forwardRef<
+  HTMLButtonElement,
+  IButtonTertiaryProps
+>((props, ref) => {
+  const { children, ...buttonProps } = props;
+
+  const leftIcon =
+    props.icon && props.iconPosition === 'left' ? props.icon : null;
+  const rightIcon =
+    props.icon && props.iconPosition == 'right' ? props.icon : null;
+
+  return (
+    <StyledButtonTertiary ref={ref} {...buttonProps}>
+      {leftIcon}
+      {children}
+      {rightIcon}
+    </StyledButtonTertiary>
+  );
+});
+
+ButtonTertiary.displayName = 'button';
+
+ButtonTertiary.defaultProps = {
+  iconPosition: 'left',
+};
