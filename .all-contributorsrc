@@ -36,6 +36,39 @@
         "review",
         "test"
       ]
+    },
+    {
+      "login": "dealparadize",
+      "name": "Alejandro Casillas",
+      "avatar_url": "https://avatars.githubusercontent.com/u/8137908?v=4",
+      "profile": "http://alejandrocasillas.me/",
+      "contributions": [
+        "code",
+        "infra",
+        "review"
+      ]
+    },
+    {
+      "login": "Isabellacnb",
+      "name": "Isabella Canales Backhoff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/31547303?v=4",
+      "profile": "https://github.com/Isabellacnb",
+      "contributions": [
+        "code",
+        "example"
+      ]
+    },
+    {
+      "login": "ruloCode",
+      "name": "Andrés Santana",
+      "avatar_url": "https://avatars.githubusercontent.com/u/48034545?v=4",
+      "profile": "https://rulocode.com/",
+      "contributions": [
+        "code",
+        "example",
+        "doc",
+        "test"
+      ]
     }
   ],
   "contributorsPerLine": 7
