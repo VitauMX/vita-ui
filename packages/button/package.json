@@ -29,6 +29,9 @@
   "sideEffects": false,
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
+  "dependencies": {
+    "styled-system": "^5.1.5"
+  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
