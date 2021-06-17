@@ -95,6 +95,40 @@ export const Variants = () => {
           </ButtonTertiary>
         </GridItem>
       </Grid>
+      <Grid gridTemplateColumns="repeat(5, 1fr)">
+        <GridItem gridColumn="span 1/span 1">
+          <Box>Tertiary Transparent Plain</Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <Box>
+            <ButtonTertiary plain isTransparent>
+              Text
+            </ButtonTertiary>
+          </Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <ButtonTertiary plain isTransparent disabled>
+            Text
+          </ButtonTertiary>
+        </GridItem>
+      </Grid>
+      <Grid gridTemplateColumns="repeat(5, 1fr)">
+        <GridItem gridColumn="span 1/span 1">
+          <Box>Tertiary Transparent Destructive</Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <Box>
+            <ButtonTertiary isDestructive isTransparent>
+              Text
+            </ButtonTertiary>
+          </Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <ButtonTertiary isDestructive isTransparent disabled>
+            Text
+          </ButtonTertiary>
+        </GridItem>
+      </Grid>
     </Grid>
   );
 };
