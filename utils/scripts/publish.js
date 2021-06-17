@@ -11,7 +11,7 @@ const { assertGitBranch, displayError } = require('./common');
 
 const spinner = ora();
 
-const ALLOWED_PUBLISH_BRANCHES = ['main'];
+const ALLOWED_PUBLISH_BRANCHES = ['master'];
 
 const publishToNpm = async () => {
   spinner.start('Publishing to NPM');
