@@ -12,6 +12,19 @@
 <!-- DO NOT MODIFY BELOW THIS COMMENT -->
 <!-- insert-new-changelog-here -->
 
+## Release (2021-06-18)
+
+#### :bug: Bug Fix
+* Other
+  * [#59](https://github.com/VitauMX/vita-ui/pull/59) fix(publish): allow publishing from the master branch ([@DanielSepulveda](https://github.com/DanielSepulveda))
+  * [#58](https://github.com/VitauMX/vita-ui/pull/58) fix: update root package json script ([@DanielSepulveda](https://github.com/DanielSepulveda))
+* `button`
+  * [#57](https://github.com/VitauMX/vita-ui/pull/57) fix(buttons): add missing styled system dependency ([@DanielSepulveda](https://github.com/DanielSepulveda))
+
+#### Committers: 2
+- Daniel Sepulveda ([@DanielSepulveda](https://github.com/DanielSepulveda))
+- Isabella Canales Backhoff ([@Isabellacnb](https://github.com/Isabellacnb))
+
 ## Release (2021-06-15)
 
 #### :rocket: New Feature
