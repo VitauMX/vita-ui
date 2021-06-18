@@ -8,13 +8,12 @@ export interface IButtonTertiaryProps
   plain?: boolean;
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
-  isTransparent?: boolean;
 }
 
 const colorStyles = (props: IButtonTertiaryProps) => {
   if (props.isDestructive) {
     return css`
-      background-color: ${props.isTransparent ? 'transparent' : '#ffffff'};
+      background-color: transparent;
       color: #e61300;
 
       &:hover {
@@ -36,7 +35,7 @@ const colorStyles = (props: IButtonTertiaryProps) => {
   }
   if (props.plain) {
     return css`
-      background-color: ${props.isTransparent ? 'transparent' : '#ffffff'};
+      background-color: transparent;
       color: #2c3f49;
 
       &:hover {
@@ -58,7 +57,7 @@ const colorStyles = (props: IButtonTertiaryProps) => {
   }
   return css`
     color: #0077b3;
-    background-color: ${props.isTransparent ? 'transparent' : '#ffffff'};
+    background-color: transparent;
 
     &:hover {
       background-color: #e5f7ff;
