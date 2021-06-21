@@ -6,8 +6,8 @@ export interface IconProps extends React.SVGAttributes<SVGElement> {
 
 export const Icon = React.forwardRef<SVGSVGElement, IconProps>((props, ref) => {
   const {
-    width = '32',
-    height = '32',
+    width = '1em',
+    height = '1em',
     viewBox = '0 0 32 32',
     children,
     ...restSvgProps
