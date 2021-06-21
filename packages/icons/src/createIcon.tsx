@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Icon, IconProps } from './Icon';
 
-type CreatedIconProps = Omit<IconProps, 'children'>;
+type CreatedIconProps = Omit<IconProps, 'children' | 'path'>;
 
 interface PathOption {
   path: React.ReactElement | React.ReactElement[];
