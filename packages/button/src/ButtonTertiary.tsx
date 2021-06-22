@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled, { css } from 'styled-components';
 import buttonBaseStyles from './ButtonBaseStyles';
+import { ButtonIcon } from './ButtonIcon';
 
 export interface IButtonTertiaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -77,32 +78,10 @@ const colorStyles = (props: IButtonTertiaryProps) => {
   `;
 };
 
-const iconStyles = (props: IButtonTertiaryProps) => {
-  if (props.icon && props.iconPosition === 'left') {
-    return css`
-      padding-left: 24px;
-      svg {
-        width: 16px;
-        height: 16px;
-        padding-right: 8px;
-      }
-    `;
-  }
-  return css`
-    padding-right: 24px;
-    svg {
-      width: 16px;
-      height: 16px;
-      padding-left: 8px;
-    }
-  `;
-};
-
 const StyledButtonTertiary = styled.button<IButtonTertiaryProps>`
   font-weight: 600;
   padding: 14px 32px;
   ${(props) => colorStyles(props)}
-  ${(props) => (props.icon ? iconStyles(props) : null)}
 
   ${buttonBaseStyles}
 `;
@@ -120,9 +99,9 @@ export const ButtonTertiary = React.forwardRef<
 
   return (
     <StyledButtonTertiary ref={ref} {...buttonProps}>
-      {leftIcon}
+      {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
       {children}
-      {rightIcon}
+      {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
     </StyledButtonTertiary>
   );
 });

@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import buttonBaseStyles from './ButtonBaseStyles';
+import { ButtonIcon } from './ButtonIcon';
 
 const sizes = ['small', 'medium'] as const;
 type Size = typeof sizes[number];
@@ -20,30 +21,6 @@ const size = variant({
     small: {
       padding: '9px 16px',
       fontSize: '14px',
-    },
-  },
-});
-
-const icon = variant({
-  prop: 'iconPosition',
-  variants: {
-    left: {
-      paddingLeft: '24px',
-    },
-    right: {
-      paddingRight: '24px',
-    },
-  },
-});
-
-const smallBtnIcon = variant({
-  prop: 'iconPosition',
-  variants: {
-    left: {
-      paddingLeft: '12px',
-    },
-    right: {
-      paddingRight: '12px',
     },
   },
 });
@@ -80,35 +57,13 @@ const colorStyles = () => {
   `;
 };
 
-const iconStyles = (props: IButtonSecondaryProps) => {
-  if (props.icon && props.iconPosition === 'left') {
-    return css`
-      svg {
-        width: 16px;
-        height: 16px;
-        padding-right: 8px;
-      }
-    `;
-  }
-  return css`
-    svg {
-      width: 16px;
-      height: 16px;
-      padding-left: 8px;
-    }
-  `;
-};
-
 export const StyledButtonSecondary = styled.button<IButtonSecondaryProps>`
   color: #0077b3;
   font-weight: 600;
-  ${(props) => (props.icon ? iconStyles(props) : null)}
 
   ${colorStyles}
   ${buttonBaseStyles}
   ${size}
-  ${(props) => (props.icon && !(props.size === 'small') ? icon : null)}
-  ${(props) => (props.icon && props.size === 'small' ? smallBtnIcon : null)}
 `;
 
 export const ButtonSecondary = React.forwardRef<
@@ -124,9 +79,9 @@ export const ButtonSecondary = React.forwardRef<
 
   return (
     <StyledButtonSecondary ref={ref} {...buttonProps}>
-      {leftIcon}
+      {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
       {children}
-      {rightIcon}
+      {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
     </StyledButtonSecondary>
   );
 });

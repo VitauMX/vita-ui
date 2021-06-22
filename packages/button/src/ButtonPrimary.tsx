@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import buttonBaseStyles from './ButtonBaseStyles';
+import { ButtonIcon } from './ButtonIcon';
 
 const sizes = ['small', 'medium', 'large'] as const;
 type Size = typeof sizes[number];
@@ -25,30 +26,6 @@ const size = variant({
     small: {
       padding: '9px 16px',
       fontSize: '14px',
-    },
-  },
-});
-
-const icon = variant({
-  prop: 'iconPosition',
-  variants: {
-    left: {
-      paddingLeft: '24px',
-    },
-    right: {
-      paddingRight: '24px',
-    },
-  },
-});
-
-const smallBtnIcon = variant({
-  prop: 'iconPosition',
-  variants: {
-    left: {
-      paddingLeft: '12px',
-    },
-    right: {
-      paddingRight: '12px',
     },
   },
 });
@@ -104,35 +81,13 @@ const colorStyles = (props: IButtonPrimaryProps) => {
   `;
 };
 
-const iconStyles = (props: IButtonPrimaryProps) => {
-  if (props.icon && props.iconPosition === 'left') {
-    return css`
-      svg {
-        width: 16px;
-        height: 16px;
-        padding-right: 8px;
-      }
-    `;
-  }
-  return css`
-    svg {
-      width: 16px;
-      height: 16px;
-      padding-left: 8px;
-    }
-  `;
-};
-
 const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
   color: #ffffff;
   font-weight: 600;
   ${(props) => colorStyles(props)}
-  ${(props) => (props.icon ? iconStyles(props) : null)}
 
   ${buttonBaseStyles}
   ${size}
-  ${(props) => (props.icon && !(props.size === 'small') ? icon : null)}
-  ${(props) => (props.icon && props.size === 'small' ? smallBtnIcon : null)}
 `;
 
 export const ButtonPrimary = React.forwardRef<
@@ -148,9 +103,9 @@ export const ButtonPrimary = React.forwardRef<
 
   return (
     <StyledButtonPrimary ref={ref} {...buttonProps}>
-      {leftIcon}
+      {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
       {children}
-      {rightIcon}
+      {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
     </StyledButtonPrimary>
   );
 });
