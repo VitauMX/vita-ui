@@ -12,22 +12,27 @@ interface UseFieldPropGetters {
 }
 
 export function useField(props: FieldProps): UseFieldPropGetters {
-  const { id, label: _, ...restInputProps } = props;
+  const { id, label: _, ...inputProps } = props;
 
-  const innerId = useId(id);
+  const inputId = useId(id);
+  const labelId = useId();
 
   return {
     inputProps: {
-      ...restInputProps,
-      id: innerId,
+      ...inputProps,
+      id: inputId,
       /*
         Must always have a placeholder, see
         https://www.samanthaming.com/tidbits/88-css-placeholder-shown/#placeholder-shown-must-have-placeholder
       */
-      placeholder: restInputProps.placeholder || ' ',
+      placeholder: inputProps.placeholder || ' ',
+      'aria-required': inputProps.required || undefined,
+      'aria-readonly': inputProps.readOnly || undefined,
+      'aria-labelledby': labelId,
     },
     labelProps: {
-      htmlFor: innerId,
+      id: labelId,
+      htmlFor: inputId,
     },
   };
 }

@@ -29,6 +29,9 @@ export const Basic = () => {
       <GridItem gridColumn="span 1/span 1">
         <Field label="Super long label for testing long labels" />
       </GridItem>
+      <GridItem gridColumn="span 1/span 1">
+        <Field label="Required" required />
+      </GridItem>
     </Grid>
   );
 };
