@@ -2,13 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { useId } from '@reach/auto-id';
 
-const StyledFieldContainer = styled.div`
-  position: relative;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  color: #4f6672;
-`;
-
 const StyledFieldLabel = styled.label`
   position: absolute;
   padding: 16px 20px;
@@ -35,7 +28,8 @@ const StyledInput = styled.input`
   line-height: 22px;
   letter-spacing: 0.01em;
   background-color: #fff;
-  border: 1px solid #bac4ca;
+  border-width: 1px;
+  border-style: solid;
   border-radius: 4px;
   appearance: none;
   box-sizing: border-box;
@@ -56,14 +50,8 @@ const StyledInput = styled.input`
     transition: inherit;
   }
 
-  &:hover {
-    border-color: #8698a2;
-  }
-
   &:focus {
     outline: 0;
-    border-color: #1ab3ff;
-    box-shadow: 0 0 0 2px #b3e5ff;
 
     &::placeholder {
       opacity: 1;
@@ -73,7 +61,7 @@ const StyledInput = styled.input`
   &:hover,
   &:focus {
     border-width: 2px;
-    & ~ ${StyledFieldLabel} {
+    & ~ label {
       border-width: 2px;
     }
   }
@@ -83,7 +71,7 @@ const StyledInput = styled.input`
     padding-top: 24px;
     padding-bottom: 8px;
 
-    & ~ ${StyledFieldLabel} {
+    & ~ label {
       font-size: 12px;
       padding-top: 8px;
       padding-bottom: 30px;
@@ -95,11 +83,31 @@ const StyledInput = styled.input`
     padding-top: 24px;
     padding-bottom: 8px;
 
-    & ~ ${StyledFieldLabel} {
+    & ~ label {
       font-size: 12px;
       padding-top: 8px;
       padding-bottom: 30px;
     }
+  }
+`;
+
+const StyledFieldContainer = styled.div`
+  position: relative;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #4f6672;
+
+  & > input {
+    border-color: #bac4ca;
+  }
+
+  & > input:hover {
+    border-color: #8698a2;
+  }
+
+  & > input:focus {
+    border-color: #1ab3ff;
+    box-shadow: 0 0 0 2px #b3e5ff;
   }
 `;
 
