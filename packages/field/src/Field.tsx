@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { useId } from '@reach/auto-id';
+import { useField, FieldProps } from './useField';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
@@ -111,35 +111,15 @@ const StyledFieldContainer = styled.div`
   }
 `;
 
-export interface FieldProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-}
-
 export const Field = React.forwardRef<HTMLInputElement, FieldProps>(
   (props, ref) => {
-    const {
-      id,
-      label,
-      /*
-        Must always have a placeholder, see
-        https://www.samanthaming.com/tidbits/88-css-placeholder-shown/#placeholder-shown-must-have-placeholder
-      */
-      placeholder = ' ',
-      ...inputProps
-    } = props;
-
-    const innerId = useId(id);
+    const { label } = props;
+    const { inputProps, labelProps } = useField(props);
 
     return (
       <StyledFieldContainer>
-        <StyledInput
-          ref={ref}
-          {...inputProps}
-          placeholder={placeholder}
-          id={innerId}
-        />
-        <StyledFieldLabel htmlFor={innerId}>{label}</StyledFieldLabel>
+        <StyledInput ref={ref} {...inputProps} />
+        <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
       </StyledFieldContainer>
     );
   }
