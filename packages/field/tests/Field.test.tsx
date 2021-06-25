@@ -5,6 +5,6 @@ import { Field } from '../src';
 
 describe('Field', () => {
   test('renders correctly', () => {
-    render(<Field />);
+    render(<Field label="Basic field" />);
   });
 });
