@@ -55,6 +55,10 @@ const StyledInput = styled.input`
     transition: inherit;
   }
 
+  &:hover {
+    border-color: #8698a2;
+  }
+
   &:focus {
     outline: 0;
     border-color: #1ab3ff;
@@ -63,10 +67,6 @@ const StyledInput = styled.input`
     &::placeholder {
       opacity: 1;
     }
-  }
-
-  &:hover {
-    border-color: #8698a2;
   }
 
   &:hover,
