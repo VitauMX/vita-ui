@@ -6,6 +6,11 @@ import { Box, Flex } from '../../layout/src/index';
 export default {
   component: Field,
   title: 'Components/Field',
+  argTypes: {
+    onBlur: { action: 'onBlur' },
+    onFocus: { action: 'onFocus' },
+    onChange: { action: 'onChange' },
+  },
 } as Meta;
 
 export const Default: Story<FieldProps> = (args) => {
