@@ -29,6 +29,9 @@
   "sideEffects": false,
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
+  "dependencies": {
+    "@reach/auto-id": "^0.15.0"
+  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0",
