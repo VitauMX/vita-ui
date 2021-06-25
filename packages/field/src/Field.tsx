@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { useField, FieldProps } from './useField';
+import { variant } from 'styled-system';
+import { useField, FieldProps, Validation } from './useField';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
@@ -18,6 +19,8 @@ const StyledFieldLabel = styled.label`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  color: var(--field-label-color);
 `;
 
 const StyledInput = styled.input`
@@ -34,6 +37,9 @@ const StyledInput = styled.input`
   appearance: none;
   box-sizing: border-box;
   transition: 100ms all ease-in;
+  color: #4f6672;
+
+  border-color: var(--field-input-border-color);
 
   &:read-only,
   &:disabled {
@@ -50,8 +56,15 @@ const StyledInput = styled.input`
     transition: inherit;
   }
 
+  &:hover {
+    border-color: var(--field-input-hover-border-color);
+  }
+
   &:focus {
     outline: 0;
+
+    border-color: var(--field-input-focus-border-color);
+    box-shadow: var(--field-input-box-shadow);
 
     &::placeholder {
       opacity: 1;
@@ -72,6 +85,7 @@ const StyledInput = styled.input`
     padding-bottom: 8px;
 
     & ~ label {
+      color: var(--field-label-focus-color);
       font-size: 12px;
       padding-top: 8px;
       padding-bottom: 30px;
@@ -84,6 +98,7 @@ const StyledInput = styled.input`
     padding-bottom: 8px;
 
     & ~ label {
+      color: var(--field-label-focus-color);
       font-size: 12px;
       padding-top: 8px;
       padding-bottom: 30px;
@@ -91,33 +106,58 @@ const StyledInput = styled.input`
   }
 `;
 
-const StyledFieldContainer = styled.div`
+const validation = variant<
+  Record<string, any> | React.CSSProperties,
+  Validation
+>({
+  prop: 'validation',
+  variants: {
+    normal: {
+      '--field-input-border-color': '#bac4ca',
+      '--field-input-hover-border-color': '#8698a2',
+      '--field-input-focus-border-color': '#1ab3ff',
+      '--field-input-box-shadow': '0 0 0 2px #b3e5ff',
+      '--field-label-color': '#4f6672',
+      '--field-label-focus-color': '#4f6672',
+    },
+    success: {
+      '--field-input-border-color': '#22C383',
+      '--field-input-hover-border-color': '#22C383',
+      '--field-input-focus-border-color': '#22C383',
+      '--field-input-box-shadow': '0 0 0 2px #93ECC8',
+      '--field-label-color': '#4f6672',
+      '--field-label-focus-color': '#178257',
+    },
+    error: {
+      '--field-input-border-color': '#FF2D1A',
+      '--field-input-hover-border-color': '#FF2D1A',
+      '--field-input-focus-border-color': '#FF2D1A',
+      '--field-input-box-shadow': '0 0 0 2px #FF8A7F',
+      '--field-label-color': '#4f6672',
+      '--field-label-focus-color': '#E61300',
+    },
+  },
+});
+
+interface StyledFieldContainerProps {
+  validation?: Validation;
+}
+
+const StyledFieldContainer = styled.div<StyledFieldContainerProps>`
   position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  color: #4f6672;
 
-  & > input {
-    border-color: #bac4ca;
-  }
-
-  & > input:hover {
-    border-color: #8698a2;
-  }
-
-  & > input:focus {
-    border-color: #1ab3ff;
-    box-shadow: 0 0 0 2px #b3e5ff;
-  }
+  ${validation}
 `;
 
 export const Field = React.forwardRef<HTMLInputElement, FieldProps>(
   (props, ref) => {
-    const { label } = props;
+    const { label, validation } = props;
     const { inputProps, labelProps } = useField(props);
 
     return (
-      <StyledFieldContainer>
+      <StyledFieldContainer validation={validation}>
         <StyledInput ref={ref} {...inputProps} />
         <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
       </StyledFieldContainer>
@@ -126,3 +166,6 @@ export const Field = React.forwardRef<HTMLInputElement, FieldProps>(
 );
 
 Field.displayName = 'Field';
+Field.defaultProps = {
+  validation: 'normal',
+};

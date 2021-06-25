@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { useId } from '@reach/auto-id';
 
+export type Validation = 'normal' | 'success' | 'error';
+
 export interface FieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
+  validation?: Validation;
 }
 
 interface UseFieldPropGetters {

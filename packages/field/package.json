@@ -30,7 +30,9 @@
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
   "dependencies": {
-    "@reach/auto-id": "^0.15.0"
+    "@reach/auto-id": "^0.15.0",
+    "@types/styled-system": "^5.1.11",
+    "styled-system": "^5.1.5"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

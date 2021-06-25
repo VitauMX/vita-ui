@@ -32,6 +32,16 @@ export const Basic = () => {
       <GridItem gridColumn="span 1/span 1">
         <Field label="Required" required />
       </GridItem>
+      <GridItem gridColumn="span 1/span 1">
+        <Field
+          label="Success"
+          defaultValue="Success value"
+          validation="success"
+        />
+      </GridItem>
+      <GridItem gridColumn="span 1/span 1">
+        <Field label="Error" defaultValue="Error value" validation="error" />
+      </GridItem>
     </Grid>
   );
 };
