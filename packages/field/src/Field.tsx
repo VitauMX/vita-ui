@@ -165,6 +165,8 @@ export const Field = React.forwardRef<HTMLInputElement, FieldProps>(
   }
 );
 
+export type { FieldProps } from './useField';
+
 Field.displayName = 'Field';
 Field.defaultProps = {
   validation: 'normal',
