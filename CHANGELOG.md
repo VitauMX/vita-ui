@@ -12,6 +12,25 @@
 <!-- DO NOT MODIFY BELOW THIS COMMENT -->
 <!-- insert-new-changelog-here -->
 
+## Release (2021-06-28)
+
+#### :house: Internal
+* [#45](https://github.com/VitauMX/vita-ui/pull/45) fix(deps): update dependency dotenv to v10 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#46](https://github.com/VitauMX/vita-ui/pull/46) fix(deps): update dependency ts-node to v10 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#9](https://github.com/VitauMX/vita-ui/pull/9) fix(deps): update dependency concurrently to v6 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#8](https://github.com/VitauMX/vita-ui/pull/8) fix(deps): update dependency @testing-library/user-event to v13 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#13](https://github.com/VitauMX/vita-ui/pull/13) fix(deps): update dependency lerna to v4 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#44](https://github.com/VitauMX/vita-ui/pull/44) fix(deps): update dependency lint-staged to v11 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#40](https://github.com/VitauMX/vita-ui/pull/40) fix(deps): update dependency stylelint-config-recommended to v5 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#50](https://github.com/VitauMX/vita-ui/pull/50) fix(deps): update dependency @manypkg/cli to ^0.18.0 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#52](https://github.com/VitauMX/vita-ui/pull/52) fix(deps): update jest monorepo to v27 (major) ([@renovate[bot]](https://github.com/apps/renovate))
+* [#27](https://github.com/VitauMX/vita-ui/pull/27) fix(deps): update dependency husky to v6 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#39](https://github.com/VitauMX/vita-ui/pull/39) chore(deps): update actions/setup-node action to v2.1.5 ([@renovate[bot]](https://github.com/apps/renovate))
+* [#7](https://github.com/VitauMX/vita-ui/pull/7) fix(deps): update commitlint monorepo to v12 (major) ([@renovate[bot]](https://github.com/apps/renovate))
+
+#### Committers: 0
+
+
 
 ## Release (2021-06-18)
 
