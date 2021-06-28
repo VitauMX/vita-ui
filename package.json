@@ -20,6 +20,7 @@
     "gen:pkg": "ts-node utils/scripts/plopfile.ts",
     "postinstall": "yarn check:pkgs",
     "lint": "lerna run lint --stream",
+    "prepublish:pkgs": "yarn build",
     "publish:pkgs": "node utils/scripts/publish.js",
     "release": "node utils/scripts/release.js",
     "start": "yarn build && yarn storybook",
