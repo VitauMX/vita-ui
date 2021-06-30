@@ -1,14 +1,20 @@
 import * as React from 'react';
 import {
   ThemeProvider as StyledThemeProvider,
-  ThemeProviderProps,
+  ThemeProviderProps as StyledThemeProviderProps,
 } from 'styled-components';
+import { theme, VitaTheme } from './theme';
 
-export const ThemeProvider: React.FC<ThemeProviderProps<any, any>> = ({
+export interface ThemeProviderProps
+  extends StyledThemeProviderProps<VitaTheme, VitaTheme> {}
+
+export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   theme,
   children,
 }) => {
   return <StyledThemeProvider theme={theme}>{children}</StyledThemeProvider>;
 };
 
-export const theme = {};
+ThemeProvider.defaultProps = {
+  theme: theme,
+};

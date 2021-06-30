@@ -41,5 +41,11 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@styled-system/theme-get": "^5.1.2",
+    "@types/styled-system": "^5.1.11",
+    "@types/styled-system__theme-get": "^5.0.1",
+    "styled-system": "^5.1.5"
   }
 }
