@@ -1,0 +1,725 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Field renders correctly 1`] = `
+.c2 {
+  position: absolute;
+  padding: 16px 20px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  cursor: text;
+  pointer-events: none;
+  font-weight: 600;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  border: 1px solid transparent;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--field-label-color);
+}
+
+.c1 {
+  height: 54px;
+  padding: 0px 20px;
+  min-width: 220px;
+  width: 100%;
+  line-height: 22px;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  color: #4f6672;
+  border-color: var(--field-input-border-color);
+}
+
+.c1:-moz-read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:disabled {
+  background-color: #f1f3f4;
+}
+
+.c1::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:hover {
+  border-color: var(--field-input-hover-border-color);
+}
+
+.c1:focus {
+  outline: 0;
+  border-color: var(--field-input-focus-border-color);
+  box-shadow: var(--field-input-box-shadow);
+}
+
+.c1:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::placeholder {
+  opacity: 1;
+}
+
+.c1:hover,
+.c1:focus {
+  border-width: 2px;
+}
+
+.c1:hover ~ label,
+.c1:focus ~ label {
+  border-width: 2px;
+}
+
+.c1:focus,
+.c1:not(:placeholder-shown) {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:focus ~ label,
+.c1:not(:placeholder-shown) ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c1:-webkit-autofill {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:-webkit-autofill ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c0 {
+  position: relative;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 16px;
+  --field-input-border-color: #bac4ca;
+  --field-input-hover-border-color: #8698a2;
+  --field-input-focus-border-color: #1ab3ff;
+  --field-input-box-shadow: 0 0 0 2px #b3e5ff;
+  --field-label-color: #4f6672;
+  --field-label-focus-color: #4f6672;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-labelledby="2"
+    class="c1"
+    id="1"
+    placeholder=" "
+  />
+  <label
+    class="c2"
+    for="1"
+    id="2"
+  >
+    Basic field
+  </label>
+</div>
+`;
+
+exports[`Field should render with disabled 1`] = `
+.c2 {
+  position: absolute;
+  padding: 16px 20px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  cursor: text;
+  pointer-events: none;
+  font-weight: 600;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  border: 1px solid transparent;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--field-label-color);
+}
+
+.c1 {
+  height: 54px;
+  padding: 0px 20px;
+  min-width: 220px;
+  width: 100%;
+  line-height: 22px;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  color: #4f6672;
+  border-color: var(--field-input-border-color);
+}
+
+.c1:-moz-read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:disabled {
+  background-color: #f1f3f4;
+}
+
+.c1::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:hover {
+  border-color: var(--field-input-hover-border-color);
+}
+
+.c1:focus {
+  outline: 0;
+  border-color: var(--field-input-focus-border-color);
+  box-shadow: var(--field-input-box-shadow);
+}
+
+.c1:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::placeholder {
+  opacity: 1;
+}
+
+.c1:hover,
+.c1:focus {
+  border-width: 2px;
+}
+
+.c1:hover ~ label,
+.c1:focus ~ label {
+  border-width: 2px;
+}
+
+.c1:focus,
+.c1:not(:placeholder-shown) {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:focus ~ label,
+.c1:not(:placeholder-shown) ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c1:-webkit-autofill {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:-webkit-autofill ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c0 {
+  position: relative;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 16px;
+  --field-input-border-color: #bac4ca;
+  --field-input-hover-border-color: #8698a2;
+  --field-input-focus-border-color: #1ab3ff;
+  --field-input-box-shadow: 0 0 0 2px #b3e5ff;
+  --field-label-color: #4f6672;
+  --field-label-focus-color: #4f6672;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-labelledby="10"
+    class="c1"
+    disabled=""
+    id="9"
+    placeholder=" "
+    value="Value"
+  />
+  <label
+    class="c2"
+    for="9"
+    id="10"
+  >
+    Basic field
+  </label>
+</div>
+`;
+
+exports[`Field should render with error 1`] = `
+.c2 {
+  position: absolute;
+  padding: 16px 20px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  cursor: text;
+  pointer-events: none;
+  font-weight: 600;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  border: 1px solid transparent;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--field-label-color);
+}
+
+.c1 {
+  height: 54px;
+  padding: 0px 20px;
+  min-width: 220px;
+  width: 100%;
+  line-height: 22px;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  color: #4f6672;
+  border-color: var(--field-input-border-color);
+}
+
+.c1:-moz-read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:disabled {
+  background-color: #f1f3f4;
+}
+
+.c1::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:hover {
+  border-color: var(--field-input-hover-border-color);
+}
+
+.c1:focus {
+  outline: 0;
+  border-color: var(--field-input-focus-border-color);
+  box-shadow: var(--field-input-box-shadow);
+}
+
+.c1:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::placeholder {
+  opacity: 1;
+}
+
+.c1:hover,
+.c1:focus {
+  border-width: 2px;
+}
+
+.c1:hover ~ label,
+.c1:focus ~ label {
+  border-width: 2px;
+}
+
+.c1:focus,
+.c1:not(:placeholder-shown) {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:focus ~ label,
+.c1:not(:placeholder-shown) ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c1:-webkit-autofill {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:-webkit-autofill ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c0 {
+  position: relative;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 16px;
+  --field-input-border-color: #FF2D1A;
+  --field-input-hover-border-color: #FF2D1A;
+  --field-input-focus-border-color: #FF2D1A;
+  --field-input-box-shadow: 0 0 0 2px #FF8A7F;
+  --field-label-color: #4f6672;
+  --field-label-focus-color: #E61300;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-labelledby="14"
+    class="c1"
+    id="13"
+    placeholder=" "
+    value="Value"
+  />
+  <label
+    class="c2"
+    for="13"
+    id="14"
+  >
+    Basic field
+  </label>
+</div>
+`;
+
+exports[`Field should render with success 1`] = `
+.c2 {
+  position: absolute;
+  padding: 16px 20px;
+  height: 100%;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  cursor: text;
+  pointer-events: none;
+  font-weight: 600;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  border: 1px solid transparent;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--field-label-color);
+}
+
+.c1 {
+  height: 54px;
+  padding: 0px 20px;
+  min-width: 220px;
+  width: 100%;
+  line-height: 22px;
+  -webkit-letter-spacing: 0.01em;
+  -moz-letter-spacing: 0.01em;
+  -ms-letter-spacing: 0.01em;
+  letter-spacing: 0.01em;
+  background-color: #fff;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  -webkit-transition: 100ms all ease-in;
+  transition: 100ms all ease-in;
+  color: #4f6672;
+  border-color: var(--field-input-border-color);
+}
+
+.c1:-moz-read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:read-only,
+.c1:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.c1:disabled {
+  background-color: #f1f3f4;
+}
+
+.c1::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:-ms-input-placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1::placeholder {
+  opacity: 0;
+  -webkit-transition: inherit;
+  transition: inherit;
+}
+
+.c1:hover {
+  border-color: var(--field-input-hover-border-color);
+}
+
+.c1:focus {
+  outline: 0;
+  border-color: var(--field-input-focus-border-color);
+  box-shadow: var(--field-input-box-shadow);
+}
+
+.c1:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::-moz-placeholder {
+  opacity: 1;
+}
+
+.c1:focus:-ms-input-placeholder {
+  opacity: 1;
+}
+
+.c1:focus::placeholder {
+  opacity: 1;
+}
+
+.c1:hover,
+.c1:focus {
+  border-width: 2px;
+}
+
+.c1:hover ~ label,
+.c1:focus ~ label {
+  border-width: 2px;
+}
+
+.c1:focus,
+.c1:not(:placeholder-shown) {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:focus ~ label,
+.c1:not(:placeholder-shown) ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c1:-webkit-autofill {
+  padding-top: 24px;
+  padding-bottom: 8px;
+}
+
+.c1:-webkit-autofill ~ label {
+  color: var(--field-label-focus-color);
+  font-size: 12px;
+  padding-top: 8px;
+  padding-bottom: 30px;
+}
+
+.c0 {
+  position: relative;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 16px;
+  --field-input-border-color: #22C383;
+  --field-input-hover-border-color: #22C383;
+  --field-input-focus-border-color: #22C383;
+  --field-input-box-shadow: 0 0 0 2px #93ECC8;
+  --field-label-color: #4f6672;
+  --field-label-focus-color: #178257;
+}
+
+<div
+  class="c0"
+>
+  <input
+    aria-labelledby="12"
+    class="c1"
+    id="11"
+    placeholder=" "
+    value="Value"
+  />
+  <label
+    class="c2"
+    for="11"
+    id="12"
+  >
+    Basic field
+  </label>
+</div>
+`;
