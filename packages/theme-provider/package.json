@@ -1,6 +1,6 @@
 {
-  "name": "@vitau/themeProvider",
-  "description": "",
+  "name": "@vitau/theme",
+  "description": "Vita UI theme package",
   "license": "MIT",
   "homepage": "https://github.com/VitauMX/vita-ui#readme",
   "repository": {
@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/VitauMX/vita-ui/issues"
   },
-  "version": "1.0.0",
+  "version": "0.1.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
