@@ -29,6 +29,7 @@ const colorStyles = (props: IButtonTextProps) => {
 
       &:disabled {
         color: #ff7366;
+        background-color: transparent;
       }
     `;
   }
@@ -52,6 +53,7 @@ const colorStyles = (props: IButtonTextProps) => {
 
       &:disabled {
         color: #8698a2;
+        background-color: transparent;
       }
     `;
   }
@@ -74,6 +76,7 @@ const colorStyles = (props: IButtonTextProps) => {
 
     &:disabled {
       color: #4dc3ff;
+      background-color: transparent;
     }
   `;
 };

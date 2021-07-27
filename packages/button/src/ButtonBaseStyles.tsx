@@ -26,6 +26,6 @@ export default css`
   }
 
   &:disabled {
-    cursor: default;
+    cursor: not-allowed;
   }
 `;
