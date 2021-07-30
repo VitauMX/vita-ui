@@ -53,6 +53,7 @@ const colorStyles = () => {
     &:disabled {
       color: #4dc3ff;
       box-shadow: 0px 0px 0px 1px #80d4ff inset;
+      background-color: transparent;
     }
   `;
 };
