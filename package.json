@@ -9,7 +9,7 @@
     "packages/*"
   ],
   "scripts": {
-    "boot": "yarn && yarn build",
+    "boot": "yarn prestart && yarn build",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "build": "lerna run build --stream",
     "check:pkgs": "manypkg check",
@@ -18,10 +18,11 @@
     "contributors:generate": "all-contributors generate",
     "fix:pkgs": "manypkg fix",
     "gen:pkg": "ts-node utils/scripts/plopfile.ts",
-    "postinstall": "yarn check:pkgs",
+    "postinstall": "yarn bootstrap && yarn check:pkgs",
     "lint": "lerna run lint --stream",
     "publish:pkgs": "node utils/scripts/publish.js",
     "release": "node utils/scripts/release.js",
+    "prestart": "yarn && yarn bootstrap",
     "start": "yarn build && yarn storybook",
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
