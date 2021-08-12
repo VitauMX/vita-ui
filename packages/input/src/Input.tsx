@@ -2,7 +2,6 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { useInput, InputProps, Validation } from './useInput';
-import { Flex } from '../../layout/src/Flex';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
@@ -215,7 +214,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
     const { inputProps, labelProps } = useInput(props);
 
     return (
-      <Flex flexDirection="column">
+      <>
         <StyledFieldContainer validation={validation}>
           <StyledInput
             icon={icon ? true : false}
@@ -241,7 +240,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             {message}
           </StyledInputMessage>
         )}
-      </Flex>
+      </>
     );
   }
 );
