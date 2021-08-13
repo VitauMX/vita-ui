@@ -31,7 +31,6 @@ interface StyledFieldContainerProps {
 const StyledInput = styled.input<StyledInputProps>`
   height: 54px;
   padding: 0px 16px;
-  min-width: 220px;
   width: 100%;
   line-height: 22px;
   letter-spacing: 0.01em;
@@ -39,16 +38,17 @@ const StyledInput = styled.input<StyledInputProps>`
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
-  border-color: ${(props) =>
-    props.touched && 'var(--field-input-hover-border-color)'};
   appearance: none;
   box-sizing: border-box;
-  box-shadow: ${(props) => props.touched && 'var(--field-input-box-shadow)'};
   transition: border 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
   color: #4f6672;
   padding-right: ${(props) =>
-    props.icon || props.iconButton ? '48px' : '16px'};
-  padding-right: ${(props) => (props.inputButton ? '94px' : '16px')};
+    (props.icon && props.iconButton && '96px') ||
+    (props.icon && props.inputButton && '110px') ||
+    (props.icon && '36px') ||
+    (props.iconButton && '48px') ||
+    (props.inputButton && '94px') ||
+    '16px'};
   overflow: visible;
   &:read-only,
   &:disabled {
@@ -159,7 +159,7 @@ const StyledFieldContainer = styled.div<StyledFieldContainerProps>`
   position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   white-space: nowrap;
 
@@ -177,10 +177,14 @@ const StyledInputIconContainer = styled.div`
   grid-gap: 8px;
 `;
 const StyledInputIcon = styled.span`
-  position: relative;
-  display: inline-flex;
   align-self: center;
-  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
 `;
 const StyledInputButtonContainer = styled.div`
   width: 62px;
