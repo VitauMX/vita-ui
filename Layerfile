@@ -14,6 +14,7 @@ ENV NODE_OPTIONS=--max-old-space-size=8192
 
 COPY . .
 RUN yarn install
+RUN yarn build
 RUN yarn storybook:build
 RUN BACKGROUND http-server -p 8000 ./storybook-static
 
