@@ -42,8 +42,8 @@ export const Variants = () => {
         <h2>Atoms</h2>
         <h1>Inputs</h1>
       </StyledInputsHeader>
-      <Box p={5}>
-        <Flex justifyContent="center">
+      <Flex justifyContent="center" alignItems="center">
+        <Box p="5" width="250px">
           <Input
             inputButton={<ButtonSecondary>text</ButtonSecondary>}
             label="Label"
@@ -51,8 +51,11 @@ export const Variants = () => {
             validation="normal"
             message="Message"
           />
-        </Flex>
-      </Box>
+        </Box>
+        <Box p="5" width="250px">
+          <Input type="password" touched label="Contraseña" message="Message" />
+        </Box>
+      </Flex>
       <Grid gridTemplateRows="repeat(4, 1fr)" gridRowGap="1rem">
         {/* NORMAL */}
         <Grid

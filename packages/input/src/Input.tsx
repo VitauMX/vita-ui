@@ -67,6 +67,7 @@ const StyledInput = styled.input<StyledInputProps>`
 
   &:hover {
     border-color: var(--field-input-hover-border-color);
+    border-color: ${(props) => props.disabled && '#bac4ca'};
   }
 
   &:focus {
@@ -83,8 +84,11 @@ const StyledInput = styled.input<StyledInputProps>`
   &:hover,
   &:focus {
     border-width: 2px;
+    border-width: ${(props) => props.disabled && '1px'};
+
     & ~ label {
       border-width: 2px;
+      border-width: ${(props) => props.disabled && '1px'};
     }
   }
 
