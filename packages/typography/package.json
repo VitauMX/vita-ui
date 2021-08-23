@@ -1,0 +1,49 @@
+{
+  "name": "@vitau/typography",
+  "description": "Vita UI Typography component",
+  "license": "MIT",
+  "homepage": "https://github.com/VitauMX/vita-ui#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VitauMX/vita-ui.git"
+  },
+  "bugs": {
+    "url": "https://github.com/VitauMX/vita-ui/issues"
+  },
+  "version": "1.0.0",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "concurrently yarn:build:*",
+    "build:cjs": "cross-env BABEL_ENV=cjs babel src --root-mode upward --extensions .ts,.tsx -d dist/cjs --source-maps",
+    "build:esm": "cross-env BABEL_ENV=esm babel src --root-mode upward --extensions .ts,.tsx -d dist/esm --source-maps",
+    "build:types": "tsc --declarationDir dist/types",
+    "lint": "concurrently yarn:lint:*",
+    "lint:src": "eslint src --ext .ts,.tsx --config ../../.eslintrc",
+    "lint:types": "tsc --noEmit"
+  },
+  "sideEffects": false,
+  "types": "dist/types/index.d.ts",
+  "typings": "dist/types/index.d.ts",
+  "dependencies": {
+    "@types/styled-system": "^5.1.11",
+    "styled-system": "^5.1.5"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "styled-components": "^5.2.1"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
