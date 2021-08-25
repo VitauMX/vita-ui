@@ -30,6 +30,7 @@
   "types": "dist/types/index.d.ts",
   "typings": "dist/types/index.d.ts",
   "dependencies": {
+    "@types/styled-system": "^5.1.11",
     "styled-system": "^5.1.5"
   },
   "peerDependencies": {

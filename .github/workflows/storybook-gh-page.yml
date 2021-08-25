@@ -17,6 +17,7 @@ jobs:
           node-version: '12.x'
 
       - run: npm i
+      - run: npm run build
       - run: npm run storybook:build
 
       - name: Deploy

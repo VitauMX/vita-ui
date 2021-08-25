@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     // ECMAScript target version. "ESNext" targets latest supported features.
     "target": "ESNext",
     "module": "ESNext",
