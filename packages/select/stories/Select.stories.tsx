@@ -62,7 +62,8 @@ export const Variants = () => {
             <Select
               id="defaultSelect"
               name="defaultSelect"
-              error="Error message"
+              validation="error"
+              message="Error message"
               label="Label"
               touched={true}
               options={options}
@@ -80,7 +81,8 @@ export const Variants = () => {
             <Select
               id="defaultSelect"
               name="defaultSelect"
-              isValid
+              validation="success"
+              message="Success message"
               label="Label"
               touched={true}
               options={options}
