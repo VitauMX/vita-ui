@@ -1,5 +1,5 @@
 {
-  "private": false,
+  "private": true,
   "name": "vitau",
   "description": "Vitau UI Library",
   "license": "MIT",

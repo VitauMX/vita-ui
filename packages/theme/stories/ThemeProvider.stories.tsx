@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Meta } from '@storybook/react';
 import styled from 'styled-components';
-import { ThemeProvider, getThemeValue } from '../src';
+import { ThemeProvider, getThemeValue, theme } from '../src';
+
+console.log(theme);
 
 export default {
   component: ThemeProvider,
@@ -9,20 +11,20 @@ export default {
 } as Meta;
 
 const TextPrimary = styled.p`
-  font-family: ${getThemeValue('fonts.primary')};
+  font-family: ${getThemeValue('font.primary')};
 `;
 
 const TextSecondary = styled.p`
-  font-family: ${getThemeValue('fonts.secondary')};
+  font-family: ${getThemeValue('font.secondary')};
 `;
 
-export const Default = () => (
-  <ThemeProvider>
-    <p>I have a default font family</p>
-    <TextPrimary>I have a primary font family</TextPrimary>
-    <TextSecondary>I have a secondary font family</TextSecondary>
-  </ThemeProvider>
-);
+// export const Default = () => (
+//   <ThemeProvider>
+//     <p>I have a default font family</p>
+//     <TextPrimary>I have a primary font family</TextPrimary>
+//     <TextSecondary>I have a secondary font family</TextSecondary>
+//   </ThemeProvider>
+// );
 
 export const NoThemeProvider = () => (
   <div>
@@ -42,24 +44,24 @@ export const CustomTheme = () => (
   </ThemeProvider>
 );
 
-export const NestedThemes = () => (
-  <ThemeProvider>
-    <h2>Normal Fonts</h2>
-    <TextPrimary>I have a primary font family</TextPrimary>
-    <TextSecondary>I have a secondary font family</TextSecondary>
-    <h2>Inverted fonts</h2>
-    <ThemeProvider
-      theme={(theme) => ({
-        ...theme,
-        fonts: {
-          ...theme.fonts,
-          primary: theme.fonts.secondary,
-          secondary: theme.fonts.primary,
-        },
-      })}
-    >
-      <TextPrimary>Now I have the secondary font</TextPrimary>
-      <TextSecondary>And now I have the primary font</TextSecondary>
-    </ThemeProvider>
-  </ThemeProvider>
-);
+// export const NestedThemes = () => (
+//   <ThemeProvider>
+//     <h2>Normal Fonts</h2>
+//     <TextPrimary>I have a primary font family</TextPrimary>
+//     <TextSecondary>I have a secondary font family</TextSecondary>
+//     <h2>Inverted fonts</h2>
+//     <ThemeProvider
+//       theme={(theme) => ({
+//         ...theme,
+//         fonts: {
+//           ...theme.fonts,
+//           primary: theme.fonts.secondary,
+//           secondary: theme.fonts.primary,
+//         },
+//       })}
+//     >
+//       <TextPrimary>Now I have the secondary font</TextPrimary>
+//       <TextSecondary>And now I have the primary font</TextSecondary>
+//     </ThemeProvider>
+//   </ThemeProvider>
+// );
