@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { useInput, SelectProps, Validation } from './useSelect';
+// import classNames from 'classnames';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
@@ -39,17 +40,12 @@ const StyledSelect = styled.select<StyledInputProps>`
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
-  appearance: none;
+  /* appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none; */
   box-sizing: border-box;
   transition: border 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
   color: #4f6672;
-  padding-right: ${(props) =>
-    (props.icon && props.iconButton && '96px') ||
-    (props.icon && props.inputButton && '110px') ||
-    (props.icon && '36px') ||
-    (props.iconButton && '48px') ||
-    (props.inputButton && '94px') ||
-    '16px'};
   overflow: visible;
   &:read-only,
   &:disabled {
@@ -168,6 +164,10 @@ const StyledFieldContainer = styled.div<StyledFieldContainerProps>`
   white-space: nowrap;
   box-sizing: border-box;
   ${validation}
+
+  i.disabled-icon.chevron {
+    color: #b3bfc4;
+  }
 `;
 
 const StyledInputMessage = styled.span<StyledInputMessageProps>`
@@ -190,8 +190,13 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
       message,
       touched,
       options,
+      disabled,
     } = props;
     const { selectProps, labelProps } = useInput(props);
+
+    // const iconClassname = classNames('chevron fas fa-chevron-down', {
+    //   'disabled-icon': disabled,
+    // });
 
     return (
       <>
@@ -202,6 +207,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             inputButton={inputButton ? true : false}
             touched={touched}
             ref={ref}
+            disabled={disabled}
             {...selectProps}
           >
             <option value="" selected hidden disabled></option>
@@ -212,7 +218,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
             ))}
           </StyledSelect>
           <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
-          <i aria-hidden="true"></i>
+          {/* <i className={iconClassname} aria-hidden="true"></i> */}
         </StyledFieldContainer>
         {message && (
           <StyledInputMessage validation={validation}>

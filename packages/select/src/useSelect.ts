@@ -39,7 +39,6 @@ export function useInput(props: SelectProps): UseFieldPropGetters {
       */
       placeholder: selectProps.placeholder || ' ',
       'aria-required': selectProps.required || undefined,
-      'aria-readonly': selectProps.readOnly || undefined,
       'aria-labelledby': labelId,
     },
     labelProps: {
