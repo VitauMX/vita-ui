@@ -25,16 +25,16 @@ const type = variant({
   prop: 'type',
   variants: {
     display_big: {
-      fontSize: '56px',
-      letterSpacing: '-2%',
+      fontSize: '64px',
+      letterSpacing: '-0.02em',
     },
     display: {
       fontSize: '40px',
-      letterSpacing: '-1%',
+      letterSpacing: '-0.01em',
     },
     big: {
       fontSize: '32px',
-      letterSpacing: '-0.5%',
+      letterSpacing: '-0.02em',
     },
     normal: {
       fontSize: '24px',
@@ -60,7 +60,7 @@ export const Title = styled(TitleBase)<ITitleProps>`
   font-family: 'Galano Grotesque Alt', sans-serif;
   font-weight: bold;
   line-height: 125%;
-  color: #4f6672;
+  color: #002f48;
   ${type}
 `;
 

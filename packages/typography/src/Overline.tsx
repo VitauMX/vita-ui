@@ -8,7 +8,7 @@ export const Overline = styled.p<IOverlineProps>`
   font-size: 14px;
   font-weight: bold;
   line-height: 125%;
-  letter-spacing: 1.6%;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #4f6672;
 `;
