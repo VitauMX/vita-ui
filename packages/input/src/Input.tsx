@@ -5,13 +5,13 @@ import { useInput, InputProps, Validation } from './useInput';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
-  padding: 16px 20px;
+  padding: 12px 18px;
   left: 0;
   top: 0;
   transform-origin: 0 0;
   cursor: text;
   pointer-events: none;
-  font-weight: 600;
+  font-weight: normal;
   transition: 100ms all ease-in;
   max-width: 63%;
   white-space: nowrap;
@@ -29,7 +29,7 @@ interface StyledFieldContainerProps {
   validation?: Validation;
 }
 const StyledInput = styled.input<StyledInputProps>`
-  height: 54px;
+  height: 44px;
   padding: 0px 16px;
   width: 100%;
   line-height: 22px;
@@ -90,19 +90,19 @@ const StyledInput = styled.input<StyledInputProps>`
 
   &:focus,
   &:not(:placeholder-shown) {
-    padding-top: 24px;
+    padding-top: 22px;
     padding-bottom: 8px;
 
     & ~ label {
       color: #4f6672;
       font-size: 12px;
-      padding-top: 8px;
+      padding-top: 6px;
       padding-bottom: 30px;
     }
   }
 
   &:-webkit-autofill {
-    padding-top: 24px;
+    padding-top: 22px;
     padding-bottom: 8px;
 
     & ~ label {
@@ -199,7 +199,7 @@ const StyledInputMessage = styled.span<StyledInputMessageProps>`
   margin-top: 4px;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: normal;
   color: var(--field-label-focus-color);
   ${validation}
 `;
