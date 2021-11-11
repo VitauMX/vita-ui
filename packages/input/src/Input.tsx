@@ -5,7 +5,7 @@ import { useInput, InputProps, Validation } from './useInput';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
-  padding: 12px 18px;
+  padding: 10px 18px;
   left: 0;
   top: 0;
   transform-origin: 0 0;
