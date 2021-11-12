@@ -120,5 +120,10 @@
   },
   "czConfig": {
     "path": "node_modules/cz-conventional-changelog"
+  },
+  "devDependencies": {
+    "@storybook/addons": "^6.3.12",
+    "@storybook/theming": "^6.3.12",
+    "storybook-addon-designs": "^6.2.0"
   }
 }

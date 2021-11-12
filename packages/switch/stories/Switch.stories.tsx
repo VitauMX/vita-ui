@@ -4,7 +4,7 @@ import { Switch } from '../src';
 
 export default {
   component: Switch,
-  title: 'Components/Switch',
+  title: 'Components/Atoms/Switch',
 } as Meta;
 
 export const Default = () => {

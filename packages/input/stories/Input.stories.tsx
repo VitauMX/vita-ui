@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 export default {
   component: Input,
-  title: 'Components/Input',
+  title: 'Components/Atoms/Input',
 } as Meta;
 const StyledInputsStoriesContainer = styled.div`
   height: 100vh;

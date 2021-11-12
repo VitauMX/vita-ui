@@ -5,7 +5,7 @@ import { Box, Flex } from '../../layout/src/index';
 
 export default {
   component: Field,
-  title: 'Components/Field',
+  title: 'Components/Atoms/Field',
   argTypes: {
     onBlur: { action: 'onBlur' },
     onFocus: { action: 'onFocus' },

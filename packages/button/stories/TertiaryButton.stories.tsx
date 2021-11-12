@@ -3,10 +3,12 @@ import * as React from 'react';
 import { ButtonTertiary } from '../src';
 import { Box, Grid, GridItem } from '../../layout/src/index';
 import { CheckCircleIcon } from '../../icons/src/icons/CheckCircle';
+import { withDesign } from 'storybook-addon-designs';
 
 export default {
-  title: 'Components/Button/Tertiary',
+  title: 'Components/Atoms/Button/Tertiary',
   component: ButtonTertiary,
+  decorators: [withDesign],
 } as Meta;
 
 export const Variants = () => {
@@ -97,4 +99,12 @@ export const Variants = () => {
       </Grid>
     </Grid>
   );
+};
+
+Variants.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/qKyhrxhnjz4Fo62NhTc287/Vita-Components?node-id=10%3A4777',
+  },
 };

@@ -4,7 +4,7 @@ import { Box, Grid, GridItem } from '../../layout/src/index';
 import { ButtonText } from '../src';
 
 export default {
-  title: 'Components/Button/Text',
+  title: 'Components/Atoms/Button/Text',
   component: ButtonText,
 } as Meta;
 

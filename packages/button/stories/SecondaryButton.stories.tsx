@@ -1,12 +1,14 @@
 import { Meta } from '@storybook/react';
 import * as React from 'react';
+import { withDesign } from 'storybook-addon-designs';
 import { Box, Grid, GridItem } from '../../layout/src/index';
 import { ButtonSecondary } from '../src';
 import { CheckCircleIcon } from '../../icons/src/icons/CheckCircle';
 
 export default {
-  title: 'Components/Button/Secondary',
+  title: 'Components/Atoms/Button/Secondary',
   component: ButtonSecondary,
+  decorators: [withDesign],
 } as Meta;
 
 export const Variants = () => {
@@ -125,4 +127,11 @@ export const Variants = () => {
       </Grid>
     </Grid>
   );
+};
+Variants.parameters = {
+  design: {
+    type: 'figma',
+    url:
+      'https://www.figma.com/file/qKyhrxhnjz4Fo62NhTc287/Vita-Components?node-id=10%3A4777',
+  },
 };

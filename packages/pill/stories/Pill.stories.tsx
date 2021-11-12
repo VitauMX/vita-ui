@@ -4,7 +4,7 @@ import { Box, Grid, GridItem } from '../../layout/src/index';
 import { Pill } from '../src';
 
 export default {
-  title: 'Components/Pill',
+  title: 'Components/Atoms/Pill',
   component: Pill,
 } as Meta;
 

@@ -4,7 +4,7 @@ import { Box, Grid, GridItem } from '../../layout/src/index';
 import { Select } from '../src';
 
 export default {
-  title: 'Components/Select',
+  title: 'Components/Atoms/Select',
   component: Select,
 } as Meta;
 
