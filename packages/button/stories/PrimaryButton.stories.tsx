@@ -1,7 +1,7 @@
 import { Meta } from '@storybook/react';
 import * as React from 'react';
 import { ButtonPrimary } from '../src';
-import { Box, Grid, GridItem } from '../../layout/src/index';
+import { Box, Grid, GridItem, Flex } from '../../layout/src/index';
 import { CheckCircleIcon } from '../../icons/src/icons/CheckCircle';
 
 export default {
@@ -12,7 +12,7 @@ export default {
 export const Variants = () => {
   return (
     <Grid gridTemplateRows="repeat(5, 1fr)" gridRowGap="2rem">
-      <Grid gridTemplateColumns="repeat(5, 1fr)">
+      <Grid gridTemplateColumns="repeat(7, 1fr)">
         <GridItem gridColumn="4 / 2">Normal</GridItem>
         <GridItem gridColumn="span 2/span 2">Disabled</GridItem>
       </Grid>
@@ -21,9 +21,13 @@ export const Variants = () => {
           <Box>Primary</Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
-          <Box>
+          <Flex alignItems="center">
             <ButtonPrimary>Text</ButtonPrimary>
-          </Box>
+            <br />
+            <Box margin="20px">
+              <ButtonPrimary loading>Text</ButtonPrimary>
+            </Box>
+          </Flex>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <ButtonPrimary disabled>Text</ButtonPrimary>

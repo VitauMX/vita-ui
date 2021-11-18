@@ -3980,6 +3980,13 @@
   resolved "https://registry.npmjs.org/@types/clear/-/clear-0.1.1.tgz"
   integrity sha512-Wu6DxCnSjFiqymbTeyb63VdU1oKYW0qCnmOSBjpMyuvcuvI9keXfS6RbEcKYqUY0dPOLa34qV+XHAdgiRzPBtg==
 
+"@types/cleave.js@^1.4.4":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@types/cleave.js/-/cleave.js-1.4.6.tgz#985ae25b3545986789c1adb262b21bb3cd49b2ac"
+  integrity sha512-OVW8lDUfaMa13OkWpH0ydQOB9IMLN9UZP4lBz63xCDZr/b7SqImRlBuzM1+eQb4whGPGGkZBOUe0Q7naOVO2dQ==
+  dependencies:
+    "@types/react" "*"
+
 "@types/command-line-args@^5.0.0":
   version "5.0.0"
   resolved "https://registry.npmjs.org/@types/command-line-args/-/command-line-args-5.0.0.tgz"
@@ -6446,6 +6453,11 @@ clear@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/clear/-/clear-0.1.0.tgz"
   integrity sha512-qMjRnoL+JDPJHeLePZJuao6+8orzHMGP04A8CdwCNsKhRbOnKRjefxONR7bwILT3MHecxKBjHkKL/tkZ8r4Uzw==
+
+cleave.js@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/cleave.js/-/cleave.js-1.6.0.tgz#0e4e011943bdd70c67c9dcf4ff800ce710529171"
+  integrity sha512-ivqesy3j5hQVG3gywPfwKPbi/7ZSftY/UNp5uphnqjr25yI2CP8FS2ODQPzuLXXnNLi29e2+PgPkkiKUXLs/Nw==
 
 cli-boxes@^2.2.0:
   version "2.2.1"

@@ -36,6 +36,7 @@ export interface IButtonPrimaryProps
   size?: typeof sizes[number];
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
+  loading?: boolean;
 }
 
 const colorStyles = (props: IButtonPrimaryProps) => {
@@ -90,11 +91,49 @@ const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
   ${size}
 `;
 
+const StyledLoader = styled.div`
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+
+  div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    animation: isLoading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+    border-width: 2px;
+    &:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+    &:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+    &:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+  }
+
+  @keyframes isLoading {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+`;
+
 export const ButtonPrimary = React.forwardRef<
   HTMLButtonElement,
   IButtonPrimaryProps
 >((props, ref) => {
-  const { children, ...buttonProps } = props;
+  const { children, loading, ...buttonProps } = props;
 
   const leftIcon =
     props.icon && props.iconPosition === 'left' ? props.icon : null;
@@ -103,9 +142,20 @@ export const ButtonPrimary = React.forwardRef<
 
   return (
     <StyledButtonPrimary ref={ref} {...buttonProps}>
-      {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
-      {children}
-      {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
+      {loading ? (
+        <StyledLoader>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </StyledLoader>
+      ) : (
+        <>
+          {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
+          {children}
+          {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
+        </>
+      )}
     </StyledButtonPrimary>
   );
 });

@@ -3,7 +3,22 @@ import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { useInput, InputProps, Validation } from './useInput';
 
-const StyledFieldLabel = styled.label`
+interface StyledInputProps {
+  icon?: boolean;
+  iconButton?: boolean;
+  inputButton?: boolean;
+  touched?: boolean;
+}
+interface StyledLabelProps {
+  icon?: boolean;
+  iconButton?: boolean;
+  inputButton?: boolean;
+  // touched?: boolean;
+}
+interface StyledFieldContainerProps {
+  validation?: Validation;
+}
+const StyledFieldLabel = styled.label<StyledLabelProps>`
   position: absolute;
   padding: 10px 18px;
   left: 0;
@@ -13,21 +28,13 @@ const StyledFieldLabel = styled.label`
   pointer-events: none;
   font-weight: normal;
   transition: 100ms all ease-in;
-  max-width: 63%;
+  max-width: ${(props) =>
+    (props.inputButton && '63%') || (props.icon && props.icon && '75%')};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #4f6672;
+  color: var(--field-label-color);
 `;
-interface StyledInputProps {
-  icon?: boolean;
-  iconButton?: boolean;
-  inputButton?: boolean;
-  touched?: boolean;
-}
-interface StyledFieldContainerProps {
-  validation?: Validation;
-}
 const StyledInput = styled.input<StyledInputProps>`
   height: 44px;
   padding: 0px 16px;
@@ -232,7 +239,14 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
             ref={ref}
             {...inputProps}
           />
-          <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
+          <StyledFieldLabel
+            icon={icon ? true : false}
+            iconButton={iconButton ? true : false}
+            inputButton={inputButton ? true : false}
+            {...labelProps}
+          >
+            {label}
+          </StyledFieldLabel>
           <StyledInputIconContainer>
             {icon && <StyledInputIcon>{icon}</StyledInputIcon>}
             {iconButton && <StyledInputIcon>{iconButton}</StyledInputIcon>}

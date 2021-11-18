@@ -6,7 +6,6 @@ import { useField, FieldProps, Validation } from './useField';
 const StyledFieldLabel = styled.label`
   position: absolute;
   padding: 16px 20px;
-  height: 100%;
   left: 0;
   top: 0;
   transform-origin: 0 0;
@@ -14,12 +13,9 @@ const StyledFieldLabel = styled.label`
   pointer-events: none;
   font-weight: 600;
   transition: 100ms all ease-in;
-  border: 1px solid transparent;
-  max-width: 66.66%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
   color: var(--field-label-color);
 `;
 
@@ -142,25 +138,47 @@ const validation = variant<
 interface StyledFieldContainerProps {
   validation?: Validation;
 }
+interface StyledInputMessageProps {
+  validation?: Validation;
+}
 
 const StyledFieldContainer = styled.div<StyledFieldContainerProps>`
   position: relative;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  box-sizing: border-box;
 
+  ${validation}
+`;
+const StyledInputMessage = styled.span<StyledInputMessageProps>`
+  margin-top: 4px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: var(--field-label-focus-color);
   ${validation}
 `;
 
 export const Field = React.forwardRef<HTMLInputElement, FieldProps>(
   (props, ref) => {
-    const { label, validation } = props;
+    const { label, validation, message } = props;
     const { inputProps, labelProps } = useField(props);
 
     return (
-      <StyledFieldContainer validation={validation}>
-        <StyledInput ref={ref} {...inputProps} />
-        <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
-      </StyledFieldContainer>
+      <>
+        <StyledFieldContainer validation={validation}>
+          <StyledInput ref={ref} {...inputProps} />
+          <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
+        </StyledFieldContainer>
+        {message && (
+          <StyledInputMessage validation={validation}>
+            {message}
+          </StyledInputMessage>
+        )}
+      </>
     );
   }
 );

@@ -87,7 +87,7 @@ export const ButtonText = styled.button<IButtonTextProps>`
   font-weight: 600;
 
   ${colorStyles}
-  padding: 0;
+  padding: 4px;
 `;
 
 ButtonText.defaultProps = {

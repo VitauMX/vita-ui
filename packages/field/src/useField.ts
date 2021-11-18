@@ -7,6 +7,7 @@ export interface FieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   validation?: Validation;
+  message?: string;
 }
 
 interface UseFieldPropGetters {
