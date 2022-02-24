@@ -35,8 +35,7 @@ const StyledInput = styled.input<StyledInputProps>`
   line-height: 22px;
   letter-spacing: 0.01em;
   background-color: #fff;
-  border-width: 1px;
-  border-style: solid;
+  border: 1px solid #b3bfc4 ;
   border-radius: 4px;
   appearance: none;
   box-sizing: border-box;
@@ -83,11 +82,9 @@ const StyledInput = styled.input<StyledInputProps>`
 
   &:hover,
   &:focus {
-    border-width: 2px;
     border-width: ${(props) => props.disabled && '1px'};
 
     & ~ label {
-      border-width: 2px;
       border-width: ${(props) => props.disabled && '1px'};
     }
   }
@@ -126,7 +123,7 @@ const validation = variant<
   variants: {
     normal: {
       '--field-input-border-color': '#bac4ca',
-      '--field-input-hover-border-color': '#8698a2',
+      '--field-input-hover-border-color': '#355562',
       '--field-input-focus-border-color': '#1ab3ff',
       '--field-input-box-shadow': '0 0 0 2px #b3e5ff',
       '--field-label-color': '#4f6672',
