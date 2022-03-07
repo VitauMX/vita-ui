@@ -92,7 +92,7 @@
     "jest-haste-map": "^27.0.0",
     "jest-resolve": "^27.0.0",
     "jest-styled-components": "^7.0.3",
-    "jest-watch-typeahead": "^0.6.1",
+    "jest-watch-typeahead": "^1.0.0",
     "jest-watch-yarn-workspaces": "^1.1.0",
     "lerna": "^4.0.0",
     "lerna-changelog": "^1.0.1",
