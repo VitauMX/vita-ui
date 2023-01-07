@@ -28,7 +28,7 @@
     "storybook:build": "build-storybook",
     "test": "jest --passWithNoTests --watch",
     "lerna:patch": "lerna version patch",
-    "build-custom-properties": "node ./scripts/build-custom-properties.ts"
+    "build-custom-properties": "node ./scripts/build-tokens.ts"
   },
   "config": {
     "commitizen": {

@@ -61,28 +61,28 @@ const colorStyles = (props: IButtonPrimaryProps) => {
     `;
   }
   return css`
-    background-color: #0099e6;
+    background-color: var(--colors-primary);
 
     &:hover {
-      background-color: #0088cc;
+      background-color: var(--colors-cyan-80);
     }
 
     &:active {
-      background-color: #0077b3;
+      background-color: var(--colors-cyan-90);
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 2px #80d4ff;
+      box-shadow: 0px 0px 0px 2px var(--colors-cyan-30);
     }
 
     &:disabled {
-      background-color: #80d4ff;
+      background-color: var(--colors-cyan-30);
     }
   `;
 };
 
 const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
-  color: #ffffff;
+  color: var(--colors-white);
   font-weight: 600;
   ${(props) => colorStyles(props)}
 
