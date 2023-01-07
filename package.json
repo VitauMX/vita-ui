@@ -27,7 +27,8 @@
     "storybook": "start-storybook -p 6006",
     "storybook:build": "build-storybook",
     "test": "jest --passWithNoTests --watch",
-    "lerna:patch": "lerna version patch"
+    "lerna:patch": "lerna version patch",
+    "build-custom-properties": "node ./scripts/build-custom-properties.ts"
   },
   "config": {
     "commitizen": {
