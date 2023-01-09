@@ -41,22 +41,22 @@ export interface IButtonPrimaryProps
 const colorStyles = (props: IButtonPrimaryProps) => {
   if (props.isDestructive) {
     return css`
-      background-color: #ff2d1a;
+      background-color: var(--background-action-destructive-base);
 
       &:hover {
-        background-color: #cc1100;
+        background-color: var(--background-action-destructive-hover);
       }
 
       &:active {
-        background-color: #b30f00;
+        background-color: var(--background-action-destructive-active);
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 2px #ff8a7f;
+        box-shadow: 0px 0px 0px 2px var(--colors-red-10);
       }
 
       &:disabled {
-        background-color: #ff5b4c;
+        background-color: var(--background-action-destructive-disable);
       }
     `;
   }

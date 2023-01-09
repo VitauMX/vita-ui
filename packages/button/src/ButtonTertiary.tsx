@@ -15,22 +15,22 @@ const colorStyles = (props: IButtonTertiaryProps) => {
   if (props.isDestructive) {
     return css`
       background-color: transparent;
-      color: #e61300;
+      color: var(--text-button-destructive);
 
       &:hover {
-        background-color: #ffe8e5;
+        background-color: var(--background-action-ghost-destructive-hover);
       }
 
       &:active {
-        background-color: #ffb9b3;
+        background-color: var(--background-action-ghost-destructive-active);
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 2px #ff8a7f;
+        box-shadow: 0px 0px 0px 2px var(--colors-red-10);
       }
 
       &:disabled {
-        color: #ff7366;
+        color: var(--colors-red-20);
         background-color: transparent;
       }
     `;
@@ -38,51 +38,51 @@ const colorStyles = (props: IButtonTertiaryProps) => {
   if (props.plain) {
     return css`
       background-color: transparent;
-      color: #2c3f49;
+      color: var(--text-primary);
 
       &:hover {
-        background-color: #e2e6e9;
+        background-color: var(--colors-gray-10);
       }
 
       &:active {
-        background-color: #cbd3d7;
+        background-color: var(--colors-gray-20);
       }
 
       &:focus {
-        box-shadow: 0px 0px 0px 2px #bac4ca;
+        box-shadow: 0px 0px 0px 2px var(--colors-gray-30);
       }
 
       &:disabled {
-        color: #8698a2;
+        color: var(--colors-gray-50);
         background-color: transparent;
       }
     `;
   }
   return css`
-    color: #0077b3;
+    color: var(--text-cyan);
     background-color: transparent;
 
     &:hover {
-      background-color: #e5f7ff;
+      background-color: var(--background-action-ghost-hover);
     }
 
     &:active {
-      background-color: #cceeff;
+      background-color: var(--background-action-ghost-active);
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 2px #80d4ff;
+      box-shadow: 0px 0px 0px 2px var(--colors-cyan-30);
     }
 
     &:disabled {
-      color: #4dc3ff;
+      color: var(--colors-cyan-40);
       background-color: transparent;
     }
   `;
 };
 
 const StyledButtonTertiary = styled.button<IButtonTertiaryProps>`
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   padding: 14px 32px;
   ${(props) => colorStyles(props)}
 

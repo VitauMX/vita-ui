@@ -2,7 +2,7 @@ import { css } from 'styled-components';
 
 export default css`
   border: none;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-open-sans);
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
@@ -11,7 +11,7 @@ export default css`
   justify-content: center;
   margin: 0;
   border-radius: 4px;
-  font-size: 1rem;
+  font-size: var(--font-size-2);
   line-height: 1;
   user-select: none;
   text-align: center;

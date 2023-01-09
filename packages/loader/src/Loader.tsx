@@ -9,10 +9,10 @@ const color = variant<Record<string, any> | React.CSSProperties, ColorLoader>({
   prop: 'color',
   variants: {
     normal: {
-      '--loader-color': '#00aaff',
+      '--loader-color': 'var(--colors-cyan-60)',
     },
     white: {
-      '--loader-color': '#fff',
+      '--loader-color': 'var(--colors-white)',
     },
   },
 });

@@ -30,14 +30,14 @@ const StyledInput = styled.input`
   width: 100%;
   line-height: 22px;
   letter-spacing: 0.01em;
-  background-color: #fff;
+  background-color: var(--colors-white);
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   appearance: none;
   box-sizing: border-box;
   transition: 100ms all ease-in;
-  color: #4f6672;
+  color: var(--colors-gray-70);
 
   border-color: var(--field-input-border-color);
 
@@ -48,7 +48,7 @@ const StyledInput = styled.input`
   }
 
   &:disabled {
-    background-color: #f1f3f4;
+    background-color: var(--colors-gray-5);
   }
 
   &::placeholder {
@@ -114,27 +114,27 @@ const validation = variant<
   variants: {
     normal: {
       '--field-input-border-color': '#bac4ca',
-      '--field-input-hover-border-color': '#8698a2',
-      '--field-input-focus-border-color': '#1ab3ff',
-      '--field-input-box-shadow': '0 0 0 2px #b3e5ff',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#4f6672',
+      '--field-input-hover-border-color': 'var(--colors-gray-50)',
+      '--field-input-focus-border-color': 'var(--colors-cyan-50)',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-cyan-20)',
+      '--field-label-color': 'var(--colors-gray-70)',
+      '--field-label-focus-color': 'var(--colors-gray-70)',
     },
     success: {
-      '--field-input-border-color': '#22C383',
-      '--field-input-hover-border-color': '#22C383',
-      '--field-input-focus-border-color': '#22C383',
-      '--field-input-box-shadow': '0 0 0 2px #93ECC8',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#178257',
+      '--field-input-border-color': 'var(--border-input-success-base)',
+      '--field-input-hover-border-color': 'var(--border-input-success-base)',
+      '--field-input-focus-border-color': 'var(--border-input-success-base)',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-green-10)',
+      '--field-label-color': 'var(--text-secondary)',
+      '--field-label-focus-color': 'var(--text-success)',
     },
     error: {
       '--field-input-border-color': '#FF2D1A',
       '--field-input-hover-border-color': '#FF2D1A',
       '--field-input-focus-border-color': '#FF2D1A',
-      '--field-input-box-shadow': '0 0 0 2px #FF8A7F',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#E61300',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-red-10)',
+      '--field-label-color': 'var(--text-secondary)',
+      '--field-label-focus-color': 'var(--colors-red-70)',
     },
   },
 });

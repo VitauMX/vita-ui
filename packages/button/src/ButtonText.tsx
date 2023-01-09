@@ -11,48 +11,48 @@ export interface IButtonTextProps
 const colorStyles = (props: IButtonTextProps) => {
   if (props.isDestructive) {
     return css`
-      color: #ff2d1a;
+      color: var(--text-button-destructive);
 
       background-color: transparent;
       &:hover {
-        background-color: #ffe9e6;
+        background-color: var(--background-action-ghost-destructive-hover);
       }
 
       &:active {
-        background-color: #ffbab4;
+        background-color: var(--background-action-ghost-destructive-active);
       }
 
       &:focus {
         background-color: transparent;
-        box-shadow: 0px 0px 0px 2px #ff8a7f;
+        box-shadow: 0px 0px 0px 2px var(--colors-red-10);
       }
 
       &:disabled {
-        color: #ff7366;
+        color: var(--background-action-destructive-disable);
         background-color: transparent;
       }
     `;
   }
   if (props.isPlain) {
     return css`
-      color: #2c3f49;
+      color: var(--colors-gray-90);
 
       background-color: transparent;
       &:hover {
-        background-color: #e3e7ea;
+        background-color: var(--colors-gray-10);
       }
 
       &:active {
-        background-color: #ccd4d8;
+        background-color: var(--colors-gray-30);
       }
 
       &:focus {
         background-color: transparent;
-        box-shadow: 0px 0px 0px 2px #bac4ca;
+        box-shadow: 0px 0px 0px 2px var(--colors-gray-30);
       }
 
       &:disabled {
-        color: #8698a2;
+        color: var(--colors-gray-50);
         background-color: transparent;
       }
     `;
@@ -61,28 +61,28 @@ const colorStyles = (props: IButtonTextProps) => {
     background-color: transparent;
 
     &:hover {
-      background-color: #e6f7ff;
+      background-color: var(--colors-cyan-5);
     }
 
     &:active {
-      background-color: #cdefff;
+      background-color: var(--colors-cyan-10);
     }
 
     &:focus {
       background-color: transparent;
 
-      box-shadow: 0px 0px 0px 2px #80d4ff;
+      box-shadow: 0px 0px 0px 2px var(--colors-cyan-30);
     }
 
     &:disabled {
-      color: #4dc3ff;
+      color: var(var(--colors-cyan-40));
       background-color: transparent;
     }
   `;
 };
 
 export const ButtonText = styled.button<IButtonTextProps>`
-  color: #0077b3;
+  color: var(--text-cyan);
   ${buttonBaseStyles}
   font-weight: 600;
 

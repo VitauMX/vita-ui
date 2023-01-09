@@ -14,7 +14,7 @@ export interface IIconButtonProps
 const colorStyles = (props: IIconButtonProps) => {
   if (props.isDestructive) {
     return css`
-      color: #ff2d1a;
+      color: var(--colors-red-60);
 
       background-color: transparent;
       &:hover {
@@ -27,18 +27,18 @@ const colorStyles = (props: IIconButtonProps) => {
 
       &:focus {
         background-color: transparent;
-        box-shadow: 0px 0px 0px 2px #ff8a7f;
+        box-shadow: 0px 0px 0px 2px var(--colors-red-10);
       }
 
       &:disabled {
-        color: #ff7366;
+        color: var(--background-action-destructive-disable);
         background-color: transparent;
       }
     `;
   }
   if (props.isPlain) {
     return css`
-      color: #2c3f49;
+      color: var(--text-primary);
 
       background-color: transparent;
       &:hover {
@@ -51,17 +51,17 @@ const colorStyles = (props: IIconButtonProps) => {
 
       &:focus {
         background-color: transparent;
-        box-shadow: 0px 0px 0px 2px #bac4ca;
+        box-shadow: 0px 0px 0px 2px var(--colors-gray-30);
       }
 
       &:disabled {
-        color: #8698a2;
+        color: var(--colors-gray-50);
         background-color: transparent;
       }
     `;
   }
   return css`
-    background-color: #f1f3f4;
+    background-color: var(--colors-gray-5);
 
     &:hover {
       background-color: #e6f7ff;
@@ -74,11 +74,11 @@ const colorStyles = (props: IIconButtonProps) => {
     &:focus {
       background-color: transparent;
 
-      box-shadow: 0px 0px 0px 2px #80d4ff;
+      box-shadow: 0px 0px 0px 2px var(--colors-cyan-30);
     }
 
     &:disabled {
-      color: #4dc3ff;
+      color: var(--colors-cyan-40);
       background-color: transparent;
     }
   `;
@@ -90,28 +90,28 @@ const validation = variant<
   prop: 'validation',
   variants: {
     normal: {
-      '--field-input-border-color': '#bac4ca',
-      '--field-input-hover-border-color': '#8698a2',
-      '--field-input-focus-border-color': '#1ab3ff',
-      '--field-input-box-shadow': '0 0 0 2px #b3e5ff',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#4f6672',
+      '--field-input-border-color': 'var(--colors-gray-30)',
+      '--field-input-hover-border-color': 'var(--colors-gray-50)',
+      '--field-input-focus-border-color': 'var(--border-card-active)',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-cyan-20)',
+      '--field-label-color': 'var(--text-secondary)',
+      '--field-label-focus-color': 'var(--text-secondary)',
     },
     success: {
-      '--field-input-border-color': '#22C383',
-      '--field-input-hover-border-color': '#22C383',
-      '--field-input-focus-border-color': '#22C383',
-      '--field-input-box-shadow': '0 0 0 2px #93ECC8',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#178257',
+      '--field-input-border-color': 'var(--border-input-success-base)',
+      '--field-input-hover-border-color': 'var(--border-input-success-hover)',
+      '--field-input-focus-border-color': 'var(--border-input-success-hover)',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-green-10)',
+      '--field-label-color': 'var(--colors-gray-70)',
+      '--field-label-focus-color': 'var(--text-success)',
     },
     error: {
       '--field-input-border-color': '#FF2D1A',
       '--field-input-hover-border-color': '#FF2D1A',
       '--field-input-focus-border-color': '#FF2D1A',
-      '--field-input-box-shadow': '0 0 0 2px #FF8A7F',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#E61300',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-red-10)',
+      '--field-label-color': 'var(--text-secondary)',
+      '--field-label-focus-color': 'var(--colors-red-70)',
     },
   },
 });
@@ -119,8 +119,8 @@ interface StyledIconButtoProps {
   validation?: Validation;
 }
 export const StyledIconButton = styled.button<StyledIconButtoProps>`
-  color: #0077b3;
-  font-weight: 600;
+  color: var(--text-cyan);
+  font-weight: var(--font-weight-semibold);
   width: 44px;
   height: 44px;
   ${colorStyles}

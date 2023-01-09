@@ -189,7 +189,7 @@ const choices = {
     },
   },
   fontFamily: {
-    openSans: ['"Open Sans"', 'serif'],
+    openSans: ['"Open Sans"', 'sans-serif'],
     galanoGrotesqueAlt: ['"Galano Grotesque Alt"', 'sans-serif'],
   },
   lineHeight: {

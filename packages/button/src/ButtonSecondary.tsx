@@ -35,32 +35,33 @@ export interface IButtonSecondaryProps
 const colorStyles = () => {
   return css`
     background-color: #ffffff;
-    box-shadow: 0px 0px 0px 1px #0088cc inset;
+    box-shadow: 0px 0px 0px 1px var(--colors-cyan-80) inset;
 
     &:hover {
-      box-shadow: 0px 0px 0px 2px #0088cc inset;
+      box-shadow: 0px 0px 0px 2px var(--colors-cyan-80) inset;
     }
 
     &:active {
       background-color: #e5f7ff;
-      box-shadow: 0px 0px 0px 2px #0077b3 inset;
+      box-shadow: 0px 0px 0px 2px var(--colors-cyan-90) inset;
     }
 
     &:focus {
-      box-shadow: 0px 0px 0px 1px #0088cc inset, 0px 0px 0px 2px #80d4ff;
+      box-shadow: 0px 0px 0px 1px var(--colors-cyan-80) inset,
+        0px 0px 0px 2px var(--background-action-primary-disable);
     }
 
     &:disabled {
-      color: #4dc3ff;
-      box-shadow: 0px 0px 0px 1px #80d4ff inset;
+      color: var(--colors-cyan-40);
+      box-shadow: 0px 0px 0px 1px var(--colors-cyan-30) inset;
       background-color: transparent;
     }
   `;
 };
 
 export const StyledButtonSecondary = styled.button<IButtonSecondaryProps>`
-  color: #0077b3;
-  font-weight: 600;
+  color: var(--text-cyan);
+  font-weight: var(--font-weight-semibold);
 
   ${colorStyles}
   ${buttonBaseStyles}

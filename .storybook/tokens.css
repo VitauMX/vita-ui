@@ -169,7 +169,7 @@
   --screens-max-lg: 1023px;
   --screens-max-xl: 1279px;
 
-  --font-family-open-sans: "Open Sans", serif;
+  --font-family-open-sans: "Open Sans", sans-serif;
   --font-family-galano-grotesque-alt: "Galano Grotesque Alt", sans-serif;
 
   --line-height-0: 1;
@@ -311,7 +311,7 @@
   --border-input-error-base: #ff6a1a;
   --border-input-error-hover: #cc1100;
 
-  --text-style-overline-font-family: "Open Sans", serif;
+  --text-style-overline-font-family: "Open Sans", sans-serif;
   --text-style-overline-font-weight: 700;
   --text-style-overline-line-height: 1;
   --text-style-overline-font-size: .875rem;

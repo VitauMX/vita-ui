@@ -15,32 +15,32 @@ const type = variant({
   prop: 'type',
   variants: {
     primary: {
-      color: '#006699',
+      color: 'var(--colors-cyan-100)',
       '&:hover': {
-        backgroundColor: '#CCEEFF',
+        backgroundColor: 'var(--colors-cyan-10)',
       },
       '&:active': {
-        backgroundColor: '#B3E5FF',
+        backgroundColor: 'var(--colors-cyan-20)',
       },
     },
     secondary: {
-      color: '#4F6672',
+      color: 'var(--text-secondary)',
       '&:hover': {
-        backgroundColor: '#E2E6E9',
+        backgroundColor: 'var(--colors-gray-10)',
       },
       '&:active': {
-        backgroundColor: '#CBD3D7',
+        backgroundColor: 'var(--colors-gray-20)',
       },
     },
     tertiary: {
-      color: '#0077B3',
-      border: '1px solid #0088CC',
+      color: 'var(--colors-cyan-90)',
+      border: '1px solid var(--colors-cyan-80)',
       '&:hover': {
-        backgroundColor: '#CCEEFF',
+        backgroundColor: 'var(--colors-cyan-10)',
       },
       '&:active': {
-        backgroundColor: '#0099E6',
-        color: '#FFFFFF',
+        backgroundColor: 'var(--colors-cyan-70)',
+        color: 'var(--colors-white)',
       },
     },
   },
@@ -52,11 +52,11 @@ export interface PillProps extends React.BaseHTMLAttributes<HTMLBaseElement> {
 
 export const Pill = styled.span<PillProps>`
   padding: 4px 16px;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-open-sans);
   font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 150%;
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-2);
   cursor: pointer;
   box-sizing: border-box;
   border-radius: 32px;

@@ -8,6 +8,7 @@ const StyledFieldLabel = styled.label`
   padding: 10px 18px;
   left: 0;
   top: 0;
+  
   transform-origin: 0 0;
   cursor: text;
   pointer-events: none;
@@ -17,7 +18,7 @@ const StyledFieldLabel = styled.label`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #4f6672;
+  color: var(--text-secondary);
 `;
 interface StyledInputProps {
   icon?: boolean;
@@ -34,14 +35,14 @@ const StyledInput = styled.input<StyledInputProps>`
   width: 100%;
   line-height: 22px;
   letter-spacing: 0.01em;
-  background-color: #fff;
+  background-color: var(--colors-white);
   border-width: 1px;
   border-style: solid;
   border-radius: 4px;
   appearance: none;
   box-sizing: border-box;
   transition: border 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
-  color: #4f6672;
+  color: var(--text-secondary);
   padding-right: ${(props) =>
     (props.icon && props.iconButton && '96px') ||
     (props.icon && props.inputButton && '110px') ||
@@ -57,7 +58,7 @@ const StyledInput = styled.input<StyledInputProps>`
   }
 
   &:disabled {
-    background-color: #f1f3f4;
+    background-color: var(--colors-gray-5);
   }
 
   &::placeholder {
@@ -67,7 +68,7 @@ const StyledInput = styled.input<StyledInputProps>`
 
   &:hover {
     border-color: var(--field-input-hover-border-color);
-    border-color: ${(props) => props.disabled && '#bac4ca'};
+    border-color: ${(props) => props.disabled && 'var(--colors-gray-30)'};
   }
 
   &:focus {
@@ -98,7 +99,7 @@ const StyledInput = styled.input<StyledInputProps>`
     padding-bottom: 8px;
 
     & ~ label {
-      color: #4f6672;
+      color: var(--colors-gray-70);
       font-size: 12px;
       padding-top: 6px;
       padding-bottom: 30px;
@@ -125,28 +126,28 @@ const validation = variant<
   prop: 'validation',
   variants: {
     normal: {
-      '--field-input-border-color': '#bac4ca',
-      '--field-input-hover-border-color': '#8698a2',
-      '--field-input-focus-border-color': '#1ab3ff',
-      '--field-input-box-shadow': '0 0 0 2px #b3e5ff',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#4f6672',
+      '--field-input-border-color': 'var(--colors-gray-30)',
+      '--field-input-hover-border-color': 'var(--colors-gray-50)',
+      '--field-input-focus-border-color': 'var(--colors-cyan-50)',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-cyan-20)',
+      '--field-label-color': 'var(--colors-gray-70)',
+      '--field-label-focus-color': 'var(--text-secondary)',
     },
     success: {
-      '--field-input-border-color': '#22C383',
-      '--field-input-hover-border-color': '#22C383',
-      '--field-input-focus-border-color': '#22C383',
-      '--field-input-box-shadow': '0 0 0 2px #93ECC8',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#178257',
+      '--field-input-border-color': 'var(--border-input-success-base)',
+      '--field-input-hover-border-color': 'var(--border-input-success-hover)',
+      '--field-input-focus-border-color': 'var(--colors-green-50)',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-green-10)',
+      '--field-label-color': 'var(--colors-gray-70)',
+      '--field-label-focus-color': 'var(--text-success)',
     },
     error: {
       '--field-input-border-color': '#FF2D1A',
       '--field-input-hover-border-color': '#FF2D1A',
       '--field-input-focus-border-color': '#FF2D1A',
-      '--field-input-box-shadow': '0 0 0 2px #FF8A7F',
-      '--field-label-color': '#4f6672',
-      '--field-label-focus-color': '#E61300',
+      '--field-input-box-shadow': '0 0 0 2px var(--colors-red-10)',
+      '--field-label-color': 'var( --text-secondary)',
+      '--field-label-focus-color': 'var(--colors-red-70)',
     },
   },
 });
@@ -161,8 +162,8 @@ interface StyledInputMessageProps {
 
 const StyledFieldContainer = styled.div<StyledFieldContainerProps>`
   position: relative;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-family: var(--font-family-open-sans);
+  font-size: var(--font-size-base);
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -201,9 +202,9 @@ const StyledInputButtonContainer = styled.div`
 `;
 const StyledInputMessage = styled.span<StyledInputMessageProps>`
   margin-top: 4px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: normal;
+  font-family: var(--font-family-open-sans);
+  font-size: var(--font-size-1);
+  font-weight: var(--font-weight-normal);
   color: var(--field-label-focus-color);
   ${validation}
 `;
