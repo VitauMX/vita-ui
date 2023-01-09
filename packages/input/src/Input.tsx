@@ -8,6 +8,7 @@ const StyledFieldLabel = styled.label`
   padding: 10px 18px;
   left: 0;
   top: 0;
+  
   transform-origin: 0 0;
   cursor: text;
   pointer-events: none;
