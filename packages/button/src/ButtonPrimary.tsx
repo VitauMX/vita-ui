@@ -41,7 +41,8 @@ export interface IButtonPrimaryProps
 const colorStyles = (props: IButtonPrimaryProps) => {
   if (props.isDestructive) {
     return css`
-      background-color: #ff2d1a;
+      background: #ff2d1a;
+
 
       &:hover {
         background-color: #cc1100;
