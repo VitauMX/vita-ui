@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/VitauMX/vita-ui/compare/@vitau/input@0.2.4...@vitau/input@0.4.0) (2023-01-09)
+
+
+### Features
+
+* fix input stories ([cf9e966](https://github.com/VitauMX/vita-ui/commit/cf9e966e93dc97b6140e6c9d14935ea2a33ebb4e))
+
+
+
+
+
 # [0.3.0](https://github.com/VitauMX/vita-ui/compare/@vitau/input@0.2.4...@vitau/input@0.3.0) (2023-01-09)
 
 
