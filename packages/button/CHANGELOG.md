@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.4.0...@vitau/button@1.5.0) (2023-01-17)
+
+
+### Features
+
+* **button:** adding global token ([813072b](https://github.com/VitauMX/vita-ui/commit/813072b57f678d07487a03b046d4999c4bc2c413))
+
+
+
+
+
 # [1.4.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.3.0...@vitau/button@1.4.0) (2023-01-09)
 
 
