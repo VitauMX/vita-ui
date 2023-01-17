@@ -83,7 +83,7 @@ const colorStyles = (props: IButtonPrimaryProps) => {
 
 const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
   color: var(--colors-white);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   ${(props) => colorStyles(props)}
 
   ${buttonBaseStyles}
