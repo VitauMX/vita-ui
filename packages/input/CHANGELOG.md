@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/VitauMX/vita-ui/compare/@vitau/input@0.5.0...@vitau/input@0.6.0) (2023-01-17)
+
+
+### Features
+
+* **input:** adding tokens ([f84addf](https://github.com/VitauMX/vita-ui/commit/f84addf7bdc9395319ea820e8ebc7739418376f1))
+
+
+
+
+
 # [0.5.0](https://github.com/VitauMX/vita-ui/compare/@vitau/input@0.4.0...@vitau/input@0.5.0) (2023-01-09)
 
 

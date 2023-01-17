@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/VitauMX/vita-ui/issues"
   },
-  "version": "0.5.0",
+  "version": "0.6.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
