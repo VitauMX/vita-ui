@@ -12,7 +12,7 @@ const StyledFieldLabel = styled.label`
   transform-origin: 0 0;
   cursor: text;
   pointer-events: none;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
   transition: 100ms all ease-in;
   max-width: 63%;
   white-space: nowrap;
