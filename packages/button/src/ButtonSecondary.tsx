@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import buttonBaseStyles from './ButtonBaseStyles';
 import { ButtonIcon } from './ButtonIcon';
+import { Loader } from '../../loader/src/Loader';
 
 const sizes = ['small', 'medium'] as const;
 type Size = typeof sizes[number];
@@ -30,6 +31,7 @@ export interface IButtonSecondaryProps
   size?: typeof sizes[number];
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
+  isLoading?: boolean;
 }
 
 const colorStyles = () => {
@@ -72,7 +74,7 @@ export const ButtonSecondary = React.forwardRef<
   HTMLButtonElement,
   IButtonSecondaryProps
 >((props, ref) => {
-  const { children, ...buttonProps } = props;
+  const { children, isLoading, ...buttonProps } = props;
 
   const leftIcon =
     props.icon && props.iconPosition === 'left' ? props.icon : null;
@@ -81,9 +83,15 @@ export const ButtonSecondary = React.forwardRef<
 
   return (
     <StyledButtonSecondary ref={ref} {...buttonProps}>
-      {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
-      {children}
-      {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
+      {isLoading ? ( // conditionally render loading status
+        <Loader />
+      ) : (
+        <>
+          {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
+          {children}
+          {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
+        </>
+      )}
     </StyledButtonSecondary>
   );
 });

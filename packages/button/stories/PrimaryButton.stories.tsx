@@ -31,6 +31,19 @@ export const Variants = () => {
       </Grid>
       <Grid gridTemplateColumns="repeat(5, 1fr)">
         <GridItem gridColumn="span 1/span 1">
+          <Box>Primary loading</Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <Box>
+            <ButtonPrimary isLoading>Text</ButtonPrimary>
+          </Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <ButtonPrimary disabled>Text</ButtonPrimary>
+        </GridItem>
+      </Grid>
+      <Grid gridTemplateColumns="repeat(5, 1fr)">
+        <GridItem gridColumn="span 1/span 1">
           <Box>Primary Destructive</Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
