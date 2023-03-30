@@ -22,7 +22,7 @@ export const Variants = () => {
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>
-            <ButtonPrimary>Text</ButtonPrimary>
+            <ButtonPrimary isLoading>Text</ButtonPrimary>
           </Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
