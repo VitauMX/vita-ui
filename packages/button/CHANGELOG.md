@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.8.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.7.0...@vitau/button@1.8.0) (2023-03-30)
+
+
+### Features
+
+* **button:** adding loading to buttons ([3162518](https://github.com/VitauMX/vita-ui/commit/31625183f53d9d331faa1e3ea8f342bad6152930))
+
+
+
+
+
 # [1.7.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.6.0...@vitau/button@1.7.0) (2023-03-30)
 
 
