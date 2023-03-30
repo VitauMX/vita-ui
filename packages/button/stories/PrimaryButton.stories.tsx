@@ -3,7 +3,6 @@ import * as React from 'react';
 import { ButtonPrimary } from '../src';
 import { Box, Grid, GridItem } from '../../layout/src/index';
 import { CheckCircleIcon } from '../../icons/src/icons/CheckCircle';
-
 export default {
   title: 'Components/Button/Primary',
   component: ButtonPrimary,
@@ -19,6 +18,19 @@ export const Variants = () => {
       <Grid gridTemplateColumns="repeat(5, 1fr)">
         <GridItem gridColumn="span 1/span 1">
           <Box>Primary</Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <Box>
+            <ButtonPrimary>Text</ButtonPrimary>
+          </Box>
+        </GridItem>
+        <GridItem gridColumn="span 2/span 2">
+          <ButtonPrimary disabled>Text</ButtonPrimary>
+        </GridItem>
+      </Grid>
+      <Grid gridTemplateColumns="repeat(5, 1fr)">
+        <GridItem gridColumn="span 1/span 1">
+          <Box>Loading</Box>
         </GridItem>
         <GridItem gridColumn="span 2/span 2">
           <Box>

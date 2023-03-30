@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import buttonBaseStyles from './ButtonBaseStyles';
 import { ButtonIcon } from './ButtonIcon';
+import { Loader } from '../../loader/src/Loader';
 
 export interface IButtonTertiaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -9,6 +10,7 @@ export interface IButtonTertiaryProps
   plain?: boolean;
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
+  isLoading?: boolean;
 }
 
 const colorStyles = (props: IButtonTertiaryProps) => {
@@ -93,7 +95,7 @@ export const ButtonTertiary = React.forwardRef<
   HTMLButtonElement,
   IButtonTertiaryProps
 >((props, ref) => {
-  const { children, ...buttonProps } = props;
+  const { children, isLoading, ...buttonProps } = props;
 
   const leftIcon =
     props.icon && props.iconPosition === 'left' ? props.icon : null;
@@ -102,9 +104,15 @@ export const ButtonTertiary = React.forwardRef<
 
   return (
     <StyledButtonTertiary ref={ref} {...buttonProps}>
-      {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
-      {children}
-      {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
+      {isLoading ? ( // conditionally render loading status
+        <Loader size="normal" />
+      ) : (
+        <>
+          {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
+          {children}
+          {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
+        </>
+      )}
     </StyledButtonTertiary>
   );
 });
