@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import buttonBaseStyles from './ButtonBaseStyles';
 import { ButtonIcon } from './ButtonIcon';
-import { Loader } from '../../loader/src/Loader';
+import { Loader } from './Loader';
 
 const sizes = ['small', 'medium'] as const;
 type Size = typeof sizes[number];

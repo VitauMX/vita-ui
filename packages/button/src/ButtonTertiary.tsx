@@ -2,7 +2,7 @@ import * as React from 'react';
 import styled, { css } from 'styled-components';
 import buttonBaseStyles from './ButtonBaseStyles';
 import { ButtonIcon } from './ButtonIcon';
-import { Loader } from '../../loader/src/Loader';
+import { Loader } from './Loader';
 
 export interface IButtonTertiaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
