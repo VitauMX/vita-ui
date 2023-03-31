@@ -91,7 +91,7 @@ export const ButtonSecondary = React.forwardRef<
         <>
           {children}
           <StyleSpan>
-            <Loader />
+            <Loader color="normal" />
           </StyleSpan>
         </>
       ) : (

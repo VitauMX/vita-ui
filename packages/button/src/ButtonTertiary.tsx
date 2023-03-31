@@ -112,7 +112,7 @@ export const ButtonTertiary = React.forwardRef<
         <>
           {children}
           <StyleSpan>
-            <Loader />
+            <Loader color="normal" />
           </StyleSpan>
         </>
       ) : (
