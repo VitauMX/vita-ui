@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.11.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.10.2...@vitau/button@1.11.0) (2023-03-31)
+
+
+### Features
+
+* **button:** adding loading with children ([88aeb23](https://github.com/VitauMX/vita-ui/commit/88aeb23a9a1e4e74ff0e8974ba5cd52ced6bceae))
+
+
+
+
+
 ## [1.10.2](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.10.0...@vitau/button@1.10.2) (2023-03-30)
 
 **Note:** Version bump only for package @vitau/button
