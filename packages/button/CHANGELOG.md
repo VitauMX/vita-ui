@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.12.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.11.0...@vitau/button@1.12.0) (2023-03-31)
+
+
+### Features
+
+* **button:** adding styles ([1d32e06](https://github.com/VitauMX/vita-ui/commit/1d32e06e6d0c12fb0b58bb7fa3898088f2125cda))
+
+
+
+
+
 # [1.11.0](https://github.com/VitauMX/vita-ui/compare/@vitau/button@1.10.2...@vitau/button@1.11.0) (2023-03-31)
 
 
