@@ -91,6 +91,10 @@ const StyledButtonTertiary = styled.button<IButtonTertiaryProps>`
   ${buttonBaseStyles}
 `;
 
+const StyleSpan = styled.span`
+  padding-left: 0.5rem;
+`;
+
 export const ButtonTertiary = React.forwardRef<
   HTMLButtonElement,
   IButtonTertiaryProps
@@ -104,8 +108,13 @@ export const ButtonTertiary = React.forwardRef<
 
   return (
     <StyledButtonTertiary ref={ref} {...buttonProps}>
-      {isLoading ? ( // conditionally render loading status
-        <Loader />
+      {isLoading ? (
+        <>
+          {children}
+          <StyleSpan>
+            <Loader color="white" />
+          </StyleSpan>
+        </>
       ) : (
         <>
           {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}

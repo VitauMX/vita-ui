@@ -20,7 +20,7 @@ const size = variant<Record<string, any> | React.CSSProperties, SizeLoader>({
   prop: 'size',
   variants: {
     normal: {
-      '--loader-size': '1.5rem',
+      '--loader-size': '0.7rem',
     },
     lg: {
       '--loader-size': '3rem',

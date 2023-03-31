@@ -92,6 +92,10 @@ const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
   ${size}
 `;
 
+const StyleSpan = styled.span`
+  padding-left: 0.5rem;
+`;
+
 export const ButtonPrimary = React.forwardRef<
   HTMLButtonElement,
   IButtonPrimaryProps
@@ -105,8 +109,13 @@ export const ButtonPrimary = React.forwardRef<
 
   return (
     <StyledButtonPrimary ref={ref} {...buttonProps}>
-      {isLoading ? ( // conditionally render loading status
-        <Loader color="white" />
+      {isLoading ? (
+        <>
+          {children}
+          <StyleSpan>
+            <Loader color="white" />
+          </StyleSpan>
+        </>
       ) : (
         <>
           {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}

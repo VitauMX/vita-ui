@@ -70,6 +70,10 @@ export const StyledButtonSecondary = styled.button<IButtonSecondaryProps>`
   ${size}
 `;
 
+const StyleSpan = styled.span`
+  padding-left: 0.5rem;
+`;
+
 export const ButtonSecondary = React.forwardRef<
   HTMLButtonElement,
   IButtonSecondaryProps
@@ -83,8 +87,13 @@ export const ButtonSecondary = React.forwardRef<
 
   return (
     <StyledButtonSecondary ref={ref} {...buttonProps}>
-      {isLoading ? ( // conditionally render loading status
-        <Loader />
+      {isLoading ? (
+        <>
+          {children}
+          <StyleSpan>
+            <Loader color="white" />
+          </StyleSpan>
+        </>
       ) : (
         <>
           {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
