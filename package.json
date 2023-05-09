@@ -36,6 +36,8 @@
     }
   },
   "dependencies": {
+    "@types/cleave.js": "^1.4.4",
+    "cleave.js": "^1.6.0",
     "@auto-it/all-contributors": "^10.21.0",
     "@babel/cli": "^7.12.16",
     "@babel/core": "^7.12.16",

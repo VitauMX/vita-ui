@@ -12,6 +12,9 @@ export interface InputProps
   inputButton?: React.ReactNode;
   message?: string;
   touched?: boolean;
+  cleave?: boolean;
+  /** Object that will contain the options for the cleave component */
+  cleaveOptions?: any;
 }
 
 interface UseFieldPropGetters {

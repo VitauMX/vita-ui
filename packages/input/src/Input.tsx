@@ -2,6 +2,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import { variant } from 'styled-system';
 import { useInput, InputProps, Validation } from './useInput';
+import Cleave from 'cleave.js/react';
 
 const StyledFieldLabel = styled.label`
   position: absolute;
@@ -30,6 +31,95 @@ interface StyledFieldContainerProps {
   validation?: Validation;
 }
 const StyledInput = styled.input<StyledInputProps>`
+  height: 44px;
+  padding: 0px 16px;
+  width: 100%;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  background-color: var(--colors-white);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  appearance: none;
+  box-sizing: border-box;
+  transition: border 0.2s, box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  color: var(--text-secondary);
+  padding-right: ${(props) =>
+    (props.icon && props.iconButton && '96px') ||
+    (props.icon && props.inputButton && '110px') ||
+    (props.icon && '36px') ||
+    (props.iconButton && '48px') ||
+    (props.inputButton && '94px') ||
+    '16px'};
+  overflow: visible;
+  &:read-only,
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+  &:disabled {
+    background-color: var(--colors-gray-5);
+  }
+
+  &::placeholder {
+    opacity: 0;
+    transition: inherit;
+  }
+
+  &:hover {
+    border-color: var(--field-input-hover-border-color);
+    border-color: ${(props) => props.disabled && 'var(--colors-gray-30)'};
+  }
+
+  &:focus {
+    outline: 0;
+
+    border-color: var(--field-input-focus-border-color);
+    box-shadow: var(--field-input-box-shadow);
+
+    &::placeholder {
+      opacity: 1;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    border-width: 2px;
+    border-width: ${(props) => props.disabled && '1px'};
+
+    & ~ label {
+      border-width: 2px;
+      border-width: ${(props) => props.disabled && '1px'};
+    }
+  }
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    padding-top: 22px;
+    padding-bottom: 8px;
+
+    & ~ label {
+      color: var(--colors-gray-70);
+      font-size: 12px;
+      padding-top: 6px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &:-webkit-autofill {
+    padding-top: 22px;
+    padding-bottom: 8px;
+
+    & ~ label {
+      color: #4f6672;
+      font-size: 12px;
+      padding-top: 8px;
+      padding-bottom: 30px;
+    }
+  }
+`;
+const StyledInputCleave = styled(Cleave)<StyledInputProps>`
   height: 44px;
   padding: 0px 16px;
   width: 100%;
@@ -219,20 +309,34 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       inputButton,
       message,
       touched,
+      cleave,
+      cleaveOptions,
     } = props;
     const { inputProps, labelProps } = useInput(props);
 
     return (
       <>
         <StyledFieldContainer validation={validation}>
-          <StyledInput
-            icon={icon ? true : false}
-            iconButton={iconButton ? true : false}
-            inputButton={inputButton ? true : false}
-            touched={touched}
-            ref={ref}
-            {...inputProps}
-          />
+          {cleave ? (
+            <StyledInputCleave
+              icon={icon ? true : false}
+              iconButton={iconButton ? true : false}
+              inputButton={inputButton ? true : false}
+              touched={touched}
+              options={cleaveOptions}
+              {...inputProps}
+            />
+          ) : (
+            <StyledInput
+              icon={icon ? true : false}
+              iconButton={iconButton ? true : false}
+              inputButton={inputButton ? true : false}
+              touched={touched}
+              ref={ref}
+              {...inputProps}
+            />
+          )}
+
           <StyledFieldLabel {...labelProps}>{label}</StyledFieldLabel>
           <StyledInputIconContainer>
             {icon && <StyledInputIcon>{icon}</StyledInputIcon>}
