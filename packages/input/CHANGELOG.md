@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/VitauMX/vita-ui/compare/@vitau/input@0.7.0...@vitau/input@0.8.0) (2023-05-09)
+
+
+### Features
+
+* **input:** add cleave ([21ae465](https://github.com/VitauMX/vita-ui/commit/21ae4656c9642e716b6f6d52804d1ec025fa870a))
+
+
+
+
+
 # [0.7.0](https://github.com/VitauMX/vita-ui/compare/@vitau/input@0.5.0...@vitau/input@0.7.0) (2023-01-17)
 
 
