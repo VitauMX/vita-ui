@@ -113,7 +113,7 @@
     "shelljs": "^0.8.4",
     "styled-components": "^5.2.1",
     "styled-system": "^5.1.5",
-    "stylelint": "^13.10.0",
+    "stylelint": "^15.0.0",
     "stylelint-config-recommended": "^5.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
