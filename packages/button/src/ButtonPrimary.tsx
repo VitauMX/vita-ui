@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { variant } from 'styled-system';
 import buttonBaseStyles from './ButtonBaseStyles';
@@ -34,7 +34,7 @@ const size = variant({
 export interface IButtonPrimaryProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isDestructive?: boolean;
-  size?: typeof sizes[number];
+  size?: Size;
   icon?: React.ReactNode;
   iconPosition?: 'left' | 'right';
   isLoading?: boolean;
@@ -87,38 +87,48 @@ const StyledButtonPrimary = styled.button<IButtonPrimaryProps>`
   color: var(--colors-white);
   font-weight: var(--font-weight-semibold);
   ${(props) => colorStyles(props)}
-
   ${buttonBaseStyles}
   ${size}
 `;
 
-export const ButtonPrimary = React.forwardRef<
-  HTMLButtonElement,
-  IButtonPrimaryProps
->((props, ref) => {
-  const { children, isLoading, ...buttonProps } = props;
+const renderButtonContent = (props: IButtonPrimaryProps) => {
+  const { children, isLoading, icon, iconPosition } = props;
+
+  if (isLoading) {
+    return <Loader color="white" />;
+  }
 
   const leftIcon =
-    props.icon && props.iconPosition === 'left' ? props.icon : null;
+    icon && iconPosition === 'left' ? (
+      <ButtonIcon marginEnd="8px">{icon}</ButtonIcon>
+    ) : null;
   const rightIcon =
-    props.icon && props.iconPosition == 'right' ? props.icon : null;
+    icon && iconPosition === 'right' ? (
+      <ButtonIcon marginStart="8px">{icon}</ButtonIcon>
+    ) : null;
 
   return (
-    <StyledButtonPrimary ref={ref} {...buttonProps}>
-      {isLoading ? ( // conditionally render loading status
-        <Loader color="white" />
-      ) : (
-        <>
-          {leftIcon && <ButtonIcon marginEnd="8px">{leftIcon}</ButtonIcon>}
-          {children}
-          {rightIcon && <ButtonIcon marginStart="8px">{rightIcon}</ButtonIcon>}
-        </>
-      )}
-    </StyledButtonPrimary>
+    <>
+      {leftIcon}
+      {children}
+      {rightIcon}
+    </>
   );
-});
+};
 
-ButtonPrimary.displayName = 'button';
+export const ButtonPrimary = forwardRef<HTMLButtonElement, IButtonPrimaryProps>(
+  (props, ref) => {
+    const { children, isLoading, icon, iconPosition, ...buttonProps } = props;
+
+    return (
+      <StyledButtonPrimary ref={ref} {...buttonProps}>
+        {renderButtonContent(props)}
+      </StyledButtonPrimary>
+    );
+  }
+);
+
+ButtonPrimary.displayName = 'ButtonPrimary';
 
 ButtonPrimary.defaultProps = {
   size: SIZE.MEDIUM,
