@@ -3931,13 +3931,6 @@
     "@reach/utils" "0.15.0"
     tslib "^2.1.0"
 
-"@reach/auto-id@^0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@reach/auto-id/-/auto-id-0.18.0.tgz#4b97085cd1cf1360a9bedc6e9c78e97824014f0d"
-  integrity sha512-XwY1IwhM7mkHZFghhjiqjQ6dstbOdpbFLdggeke75u8/8icT8uEHLbovFUgzKjy9qPvYwZIB87rLiR8WdtOXCg==
-  dependencies:
-    "@reach/utils" "0.18.0"
-
 "@reach/utils@0.15.0":
   version "0.15.0"
   resolved "https://registry.npmjs.org/@reach/utils/-/utils-0.15.0.tgz"
@@ -3945,11 +3938,6 @@
   dependencies:
     tiny-warning "^1.0.3"
     tslib "^2.1.0"
-
-"@reach/utils@0.18.0":
-  version "0.18.0"
-  resolved "https://registry.yarnpkg.com/@reach/utils/-/utils-0.18.0.tgz#4f3cebe093dd436eeaff633809bf0f68f4f9d2ee"
-  integrity sha512-KdVMdpTgDyK8FzdKO9SCpiibuy/kbv3pwgfXshTI6tEcQT1OOwj7BAksnzGC0rPz0UholwC+AgkqEl3EJX3M1A==
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
