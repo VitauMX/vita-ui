@@ -2,14 +2,14 @@ import nodePlop, { ActionType } from 'node-plop';
 import shell from 'shelljs';
 import _ from 'lodash';
 
-const plop = nodePlop('utils/plop-templates/plopfile.hbs');
-
 interface Answers {
   componentName: string;
   description: string;
 }
 
 async function createPackage() {
+  const plop = await nodePlop('utils/plop-templates/plopfile.hbs');
+
   plop.setHelper('capitalize', (text) => {
     return _.capitalize(_.camelCase(text));
   });
