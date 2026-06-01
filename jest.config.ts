@@ -4,6 +4,9 @@ const config: Config.InitialOptions = {
   // A preset that is used as a base for Jest's configuration.
   // See: https://kulshekhar.github.io/ts-jest/docs/getting-started/presets
   preset: 'ts-jest',
+  transform: {
+    '^.+\\.tsx?$': ['ts-jest', { tsconfig: 'tsconfig.json' }],
+  },
   // The directory where Jest should store its cached dependency information.
   cacheDirectory: '.jest-cache',
   // The directory where Jest should output its coverage files.
@@ -26,11 +29,6 @@ const config: Config.InitialOptions = {
     'jest-watch-typeahead/testname',
     'jest-watch-yarn-workspaces',
   ],
-  globals: {
-    'ts-jest': {
-      tsconfig: 'tsconfig.json',
-    },
-  },
 };
 
 export default config;
