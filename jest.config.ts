@@ -4,6 +4,8 @@ const config: Config.InitialOptions = {
   // A preset that is used as a base for Jest's configuration.
   // See: https://kulshekhar.github.io/ts-jest/docs/getting-started/presets
   preset: 'ts-jest',
+  // The test environment that will be used for testing.
+  testEnvironment: 'jsdom',
   // The directory where Jest should store its cached dependency information.
   cacheDirectory: '.jest-cache',
   // The directory where Jest should output its coverage files.

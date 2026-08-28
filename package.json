@@ -93,6 +93,7 @@
     "inquirer": "^8.0.0",
     "jest": "^30.0.0",
     "jest-axe": "^4.1.0",
+    "jest-environment-jsdom": "^30.0.0",
     "jest-haste-map": "^30.0.0",
     "jest-resolve": "^30.0.0",
     "jest-styled-components": "^7.0.3",
