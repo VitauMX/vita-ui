@@ -5,6 +5,9 @@
   "license": "MIT",
   "author": "Daniel Sepulveda",
   "version": "0.2.0",
+  "engines": {
+    "node": "^18.14.0 || ^20.0.0 || ^22.0.0 || >=24.0.0"
+  },
   "workspaces": [
     "packages/*"
   ],
@@ -24,8 +27,8 @@
     "publish:pkgs": "node utils/scripts/publish.js",
     "release": "node utils/scripts/release.js",
     "start": "yarn build && yarn storybook",
-    "storybook": "start-storybook -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook": "cross-env NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" start-storybook -p 6006",
+    "storybook:build": "cross-env NODE_OPTIONS=\"$NODE_OPTIONS --openssl-legacy-provider\" build-storybook",
     "test": "jest --passWithNoTests --watch",
     "lerna:patch": "lerna version patch",
     "build-custom-properties": "node ./scripts/build-tokens.ts"
