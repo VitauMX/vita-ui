@@ -1,8 +1,7 @@
-import nodePlop, { ActionType } from 'node-plop';
+import type { ActionType } from 'node-plop';
+import path from 'path';
 import shell from 'shelljs';
 import _ from 'lodash';
-
-const plop = nodePlop('utils/plop-templates/plopfile.hbs');
 
 interface Answers {
   componentName: string;
@@ -10,6 +9,12 @@ interface Answers {
 }
 
 async function createPackage() {
+  // node-plop 0.32 is ESM-only and nodePlop() resolves to the API.
+  // The .hbs anchor is not a module, so set the template root after init.
+  const { default: nodePlop } = await import('node-plop');
+  const plop = await nodePlop();
+  plop.setPlopfilePath(path.resolve('utils/plop-templates/plopfile.hbs'));
+
   plop.setHelper('capitalize', (text) => {
     return _.capitalize(_.camelCase(text));
   });
